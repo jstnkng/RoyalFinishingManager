@@ -1,0 +1,25 @@
+﻿<Window x:Class="RFDesktopManager.EditJob"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RFDesktopManager"
+        mc:Ignorable="d"
+        Title="EditJob" Height="620.325" Width="373.984">
+    <Grid Margin="0,0,11,6">
+        <Label Content="Job Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <TextBox DataContext="{Binding JobModel}" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="81,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245"/>
+        <Label Content="Job Description:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="84" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="335" Margin="10,82,0,0"/>
+        <Label Content="Address:
+               " HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
+        <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="23" Margin="76,184,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="269"/>
+        <Label Content="Labor:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top"/>
+        <ListBox ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="100" Margin="10,253,0,0" VerticalAlignment="Top" Width="335"/>
+        <Label Content="Total hours: 0" HorizontalAlignment="Left" Margin="256,358,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnInvoice" Content="Create invoice" HorizontalAlignment="Left" Margin="270,530,0,0" VerticalAlignment="Top" Width="79"  Height="43"/>
+        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="133,558,0,0" VerticalAlignment="Top" Width="75" />
+        <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="210,212,0,0" VerticalAlignment="Top" Width="75" Click="btnDirections_Click" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,25 @@
+﻿<Window x:Class="RFDesktopManager.AddLabor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RFDesktopManager"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Add Labor" Height="196.61" Width="582.926">
+    <Grid Margin="0,0,20,10">
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding Date}" DataContext="{Binding LaborModel}" HorizontalAlignment="Left" Margin="52,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="Job:" HorizontalAlignment="Left" Margin="185,36,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding JobsList}" DisplayMemberPath="Name" Text ="{Binding SelectedJob}" HorizontalAlignment="Left" Margin="221,38,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Hours:" HorizontalAlignment="Left" Margin="371,36,0,0" VerticalAlignment="Top"/>
+        <xctk:TimePicker Text="{Binding Time1}" HorizontalAlignment="Left" Margin="449,10,0,0" VerticalAlignment="Top" Width="102"/>
+        <xctk:TimePicker Text="{Binding Time2}" HorizontalAlignment="Left" Margin="449,35,0,0" VerticalAlignment="Top" Width="102"/>
+        <xctk:TimePicker Text="{Binding Time3}"  HorizontalAlignment="Left" Margin="449,60,0,0" VerticalAlignment="Top" Width="102"/>
+        <xctk:TimePicker Text="{Binding Time4}" HorizontalAlignment="Left" Margin="449,85,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Total hours:" HorizontalAlignment="Left" Margin="440,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding Hours}" DataContext="{Binding LaborModel}" HorizontalAlignment="Left" Margin="516,121,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="185,112,0,0" VerticalAlignment="Top" Width="85" Click="btnAdd_Click" Height="29"/>
+
+    </Grid>
+</Window>

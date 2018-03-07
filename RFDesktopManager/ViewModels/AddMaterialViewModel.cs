@@ -1,0 +1,131 @@
+﻿using RFDesktopManager.Data;
+using RFDesktopManager.Repos;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace RFDesktopManager.ViewModels
+{
+    public class AddMaterialViewModel : DependencyObject, INotifyPropertyChanged
+    {
+
+        private MaterialHistory _Model;
+
+        public MaterialHistory Model
+        {
+            get { return _Model;}
+            set
+            {
+                _Model = value;
+                RaisePropertyChanged("Model");
+            }
+        }
+
+        private List<Employee> _EmployeeList;
+
+        public List<Employee> EmployeeList
+        {
+            get { return _EmployeeList; }
+            set
+            {
+                _EmployeeList = value;
+                RaisePropertyChanged("EmployeeList");
+            }
+        }
+
+        private Employee _SelectedEmployee;
+
+        public Employee SelectedEmployee
+        {
+            get { return _SelectedEmployee; }
+            set
+            {
+                _SelectedEmployee = value;
+                RaisePropertyChanged("SelectedEmployee");
+            }
+        }
+
+        private List<Material> _MaterialList;
+
+        public List<Material> MaterialList
+        {
+            get { return _MaterialList; }
+            set
+            {
+                _MaterialList = value;
+                RaisePropertyChanged("MaterialList");
+            }
+        }
+
+        private string _NewMaterial;
+
+        public string NewMaterial
+        {
+            get { return _NewMaterial; }
+            set
+            {
+                _NewMaterial = value;
+                RaisePropertyChanged("NewMaterial");
+            }
+        }
+
+        private Material _SelectedMaterial;
+
+        public Material SelectedMaterial
+        {
+            get { return _SelectedMaterial; }
+            set
+            {
+                _SelectedMaterial = value;
+                RaisePropertyChanged("SelectedMaterial");
+            }
+        }
+
+        private List<Job> _JobList;
+
+        public List<Job> JobList
+        {
+            get { return _JobList; }
+            set
+            {
+                _JobList = value;
+                RaisePropertyChanged("JobList");
+            }
+        }
+
+        private Job _SelectedJob;
+
+        public Job SelectedJob
+        {
+            get { return _SelectedJob; }
+            set
+            {
+                _SelectedJob = value;
+                RaisePropertyChanged("SelectedJob");
+            }
+        }
+
+        public AddMaterialViewModel()
+        {
+            EmployeeList = RFRepo.GetEmployees();
+            MaterialList = RFRepo.GetMaterials();
+            JobList = RFRepo.GetJobs();
+        }
+
+
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void RaisePropertyChanged(String propertyName = "")
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+}
