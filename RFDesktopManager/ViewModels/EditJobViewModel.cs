@@ -1,4 +1,6 @@
 ﻿using RFDesktopManager.Data;
+using RFDesktopManager.Models;
+using RFDesktopManager.Repos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,9 +26,22 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private List<LaborModel> _LaborList;
+
+        public List<LaborModel> LaborList
+        {
+            get { return _LaborList; }
+            set
+            {
+                _LaborList = value;
+                RaisePropertyChanged("LaborList");
+            }
+        }
+
         public EditJobViewModel(Job selectedJob)
         {
             JobModel = selectedJob;
+            LaborList = RFRepo.GetJobLabors(selectedJob.ID);
         }
 
         public void OpenDirections()

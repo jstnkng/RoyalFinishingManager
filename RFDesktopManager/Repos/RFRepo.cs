@@ -45,6 +45,12 @@ namespace RFDesktopManager.Repos
             return db.Employees.ToList();
         }
 
+        public static string GetEmployee(int empID)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Employees.FirstOrDefault(x => x.ID == empID).FullName;
+        }
+
         public static List<LaborModel> GetEmployeeLabor(int employeeID, DateTime startDate, DateTime endDate)
         {
             var db = new RoyalFinishingDataContext();
@@ -60,6 +66,22 @@ namespace RFDesktopManager.Repos
             }
 
             return laborList;
+        }
+
+        public static List<LaborModel> GetJobLabors(int jobID)
+        {
+            var db = new RoyalFinishingDataContext();
+            var list = db.Labors.Where(x => x.JobID == jobID).ToList();
+            var jobList = new List<LaborModel>();
+            foreach (var labor in list)
+            {
+                LaborModel newLabor = new LaborModel();
+                newLabor.EmployeeName = GetEmployee(labor.EmployeeID);
+                newLabor.Date = labor.Date.Value;
+                newLabor.Hours = labor.Hours;
+                jobList.Add(newLabor);
+            }
+            return jobList;
         }
 
         public static void AddLabor(Labor model)

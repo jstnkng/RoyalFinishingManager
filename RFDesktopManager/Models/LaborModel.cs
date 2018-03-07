@@ -11,6 +11,8 @@ namespace RFDesktopManager.Models
 
         public string JobName { get; set; }
 
+        public string EmployeeName { get; set; }
+
         public decimal Hours { get; set;}
 
         public DateTime Date { get; set; }
