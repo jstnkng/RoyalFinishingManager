@@ -27,5 +27,10 @@ namespace RFDesktopManager
             _viewModel = new AddMaterialViewModel();
             DataContext = _viewModel;
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.Save();
+        }
     }
 }

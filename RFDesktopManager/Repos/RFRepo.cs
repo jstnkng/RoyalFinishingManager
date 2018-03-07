@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace RFDesktopManager.Repos
 {
@@ -72,6 +73,62 @@ namespace RFDesktopManager.Repos
         {
             var db = new RoyalFinishingDataContext();
             return db.Materials.ToList();
+        }
+
+        public static int GetMaterialID(string materialName)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Materials.FirstOrDefault(x => x.Item == materialName).ID;
+        }
+
+        public static Material GetMaterial(string materialName)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Materials.FirstOrDefault(x => x.Item == materialName);
+        }
+
+        public static bool InMaterials(string name)
+        {
+            var db = new RoyalFinishingDataContext();
+            var list = db.Materials.ToList();
+            foreach (var material in list)
+            {
+                if (material.Item == name)
+                    return true;
+            }
+            return false;
+        }
+
+        public static void AddMaterial(string materialName, decimal price)
+        {
+            try
+            {
+                var db = new RoyalFinishingDataContext();
+                Material newMaterial = new Material();
+                newMaterial.Item = materialName;
+                newMaterial.Price = price;
+                db.Materials.InsertOnSubmit(newMaterial);
+                db.SubmitChanges();
+            }
+            catch
+            {
+                MessageBox.Show("Unable to save material to materials table.");
+            }
+        }
+
+        public static void AddMaterialHistory(MaterialHistory model)
+        {
+            try
+            {
+                var db = new RoyalFinishingDataContext();
+                db.MaterialHistories.InsertOnSubmit(model);
+                db.SubmitChanges();
+                MessageBox.Show("Saved");
+            }
+            catch
+            {
+                MessageBox.Show("Unable to save. Try again shortly", "An error occured");
+            }
         }
     }
 }

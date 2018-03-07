@@ -70,6 +70,14 @@ namespace RFDesktopManager.ViewModels
             {
                 _NewMaterial = value;
                 RaisePropertyChanged("NewMaterial");
+                if (RFRepo.InMaterials(NewMaterial))
+                {
+                    SelectedMaterial = RFRepo.GetMaterial(NewMaterial);
+                    Model.CostPerItem = SelectedMaterial.Price;
+                    RaisePropertyChanged("MyModel");
+                }
+                else Model.CostPerItem = 0;
+
             }
         }
 
@@ -114,9 +122,22 @@ namespace RFDesktopManager.ViewModels
             EmployeeList = RFRepo.GetEmployees();
             MaterialList = RFRepo.GetMaterials();
             JobList = RFRepo.GetJobs();
+            Model = new MaterialHistory();
         }
 
+        public void Save()
+        {
+            if (!(RFRepo.InMaterials(NewMaterial)))
+            {
+                RFRepo.AddMaterial(NewMaterial, Model.CostPerItem);
+                SelectedMaterial = RFRepo.GetMaterial(NewMaterial);
+            }
 
+            Model.EmployeeID = SelectedEmployee.ID;
+            Model.ItemID = SelectedMaterial.ID;
+            Model.JobID = SelectedJob.ID;
+            RFRepo.AddMaterialHistory(Model);
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
