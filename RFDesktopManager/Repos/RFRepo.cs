@@ -109,6 +109,12 @@ namespace RFDesktopManager.Repos
             return db.Materials.FirstOrDefault(x => x.Item == materialName);
         }
 
+        public static Material GetMaterial(int materialID)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Materials.FirstOrDefault(x => x.ID == materialID);
+        }
+
         public static bool InMaterials(string name)
         {
             var db = new RoyalFinishingDataContext();
@@ -151,6 +157,23 @@ namespace RFDesktopManager.Repos
             {
                 MessageBox.Show("Unable to save. Try again shortly", "An error occured");
             }
+        }
+
+        public static List<MaterialModel> GetJobMaterials(int jobID)
+        {
+            var db = new RoyalFinishingDataContext();
+            var list = db.MaterialHistories.Where(x => x.JobID == jobID).ToList();
+            var materialList = new List<MaterialModel>();
+            foreach (var material in list)
+            {
+                var model = new MaterialModel();
+                model.Name = GetMaterial(material.ItemID).Item;
+                model.Price = material.CostPerItem;
+                model.Quantity = material.Quantity;
+                model.Description = material.Description;
+                materialList.Add(model);
+            }
+            return materialList;
         }
     }
 }

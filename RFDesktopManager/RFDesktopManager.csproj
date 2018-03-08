@@ -73,6 +73,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\MaterialModel.cs" />
     <Compile Include="Pages\AddMaterial.xaml.cs">
       <DependentUpon>AddMaterial.xaml</DependentUpon>
     </Compile>

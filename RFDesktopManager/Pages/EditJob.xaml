@@ -15,7 +15,7 @@
                " HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
         <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="23" Margin="76,184,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="269"/>
         <Label Content="Labor:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top"/>
-        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="100" Margin="10,253,0,0" VerticalAlignment="Top" Width="335">
+        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="100" Margin="18,253,0,0" VerticalAlignment="Top" Width="335">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date, StringFormat=d}"/>
@@ -32,9 +32,9 @@
         <ListView ItemsSource="{Binding MaterialsList}" HorizontalAlignment="Left" Height="124" Margin="15,427,0,0" VerticalAlignment="Top" Width="330">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Item" DisplayMemberBinding="{Binding Item}"/>
+                    <GridViewColumn Header="Item" DisplayMemberBinding="{Binding Name}"/>
                     <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding Quantity}"/>
-                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding CostPerItem}"/>
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}"/>
                     <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
