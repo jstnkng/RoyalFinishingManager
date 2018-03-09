@@ -11,6 +11,5 @@
         <Button Name="btnJobs" Content="Jobs" HorizontalAlignment="Left" Margin="233,136,0,0" VerticalAlignment="Top" Width="75" Click="btnJobs_Click"/>
         <Button Name="btnTimeCards" Content="Time Cards" HorizontalAlignment="Left" Margin="233,224,0,0" VerticalAlignment="Top" Width="75" Click="btnTimeCards_Click"/>
         <Button Name="btnMaterials"  Content="Materials" HorizontalAlignment="Left" Margin="233,181,0,0" VerticalAlignment="Top" Width="75" Click="btnMaterials_Click"/>
-        <Button Content=" master" />
     </Grid>
 </Window>
