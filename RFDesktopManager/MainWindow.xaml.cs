@@ -24,6 +24,7 @@ namespace RFDesktopManager
         public MainWindow()
         {
             InitializeComponent();
+            //Test.Content = Application.LoadComponent(new Uri("RFDesktopManager;content/TestPage.xaml", UriKind.Relative));
         }
 
 
