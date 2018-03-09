@@ -26,6 +26,18 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private decimal _TotalHours;
+
+        public decimal TotalHours
+        {
+            get { return _TotalHours; }
+            set
+            {
+                _TotalHours = value;
+                RaisePropertyChanged("TotalHours");
+            }
+        }
+
         private List<LaborModel> _LaborList;
 
         public List<LaborModel> LaborList
@@ -34,6 +46,12 @@ namespace RFDesktopManager.ViewModels
             set
             {
                 _LaborList = value;
+                TotalHours = 0;
+                foreach (var labor in _LaborList)
+                {
+                    TotalHours += labor.Hours;
+                }
+                RaisePropertyChanged("TotalHours");
                 RaisePropertyChanged("LaborList");
             }
         }

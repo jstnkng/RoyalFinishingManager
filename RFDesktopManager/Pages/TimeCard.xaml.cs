@@ -35,5 +35,15 @@ namespace RFDesktopManager
             Window addLaborWindow = new AddLabor(_viewModel.SelectedEmployee.ID);
             addLaborWindow.Show();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.GetPrevWeek();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            _viewModel.GetNextWeek();
+        }
     }
 }

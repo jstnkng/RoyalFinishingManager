@@ -101,6 +101,7 @@ namespace RFDesktopManager.ViewModels
             set
             {
                 _LaborList = value;
+                Hours = 0;
                 foreach (var labor in _LaborList)
                 {
                     Hours += labor.Hours;
@@ -120,6 +121,20 @@ namespace RFDesktopManager.ViewModels
                 _JobsList = value;
                 RaisePropertyChanged("JobsList");
             }
+        }
+
+        public void GetPrevWeek()
+        {
+            StartDate = StartDate.AddDays(-7);
+            EndDate = StartDate.AddDays(5);
+            LaborList = RFRepo.GetEmployeeLabor(SelectedEmployee.ID, StartDate, EndDate);
+        }
+
+        public void GetNextWeek()
+        {
+            StartDate = StartDate.AddDays(7);
+            EndDate = StartDate.AddDays(5);
+            LaborList = RFRepo.GetEmployeeLabor(SelectedEmployee.ID, StartDate, EndDate);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

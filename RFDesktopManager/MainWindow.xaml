@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RFDesktopManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="341.546" Width="558.816">
     <Grid>
         <Button Name="btnAddJob" Content="Add Job" HorizontalAlignment="Left" Margin="233,79,0,0" VerticalAlignment="Top" Width="75" Click="btnAddJob_Click"/>
         <Button Name="btnJobs" Content="Jobs" HorizontalAlignment="Left" Margin="233,136,0,0" VerticalAlignment="Top" Width="75" Click="btnJobs_Click"/>
