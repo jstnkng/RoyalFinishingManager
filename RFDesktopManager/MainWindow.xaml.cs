@@ -21,30 +21,15 @@ namespace RFDesktopManager
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        public static TabControl PageControl;
         public MainWindow()
         {
             InitializeComponent();
+            PageControl = PageController;
             //Test.Content = Application.LoadComponent(new Uri("RFDesktopManager;content/TestPage.xaml", UriKind.Relative));
         }
 
-
-        private void btnAddJob_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnJobs_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
-        private void btnTimeCards_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnMaterials_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -25,6 +25,19 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private Job _selectedJob;
+
+        public Job SelectedJob
+        {
+            get
+            {
+                return _selectedJob;
+            }
+            set
+            {
+                _selectedJob = value;
+            }
+        }
 
         public JobsViewModel()
         {

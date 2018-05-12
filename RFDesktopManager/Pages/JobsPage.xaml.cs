@@ -33,9 +33,9 @@ namespace RFDesktopManager.Pages
         private void listJobs_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            Job selectedLabor = (Job)listJobs.SelectedItems[0];
-            //Window editJobWindow = new EditJob(selectedLabor);
-            //editJobWindow.Show();
+            Job selectedJob = (Job)listJobs.SelectedItems[0];
+            MainWindow.PageControl.SelectedIndex = 2;
+            EditJobPage._viewModel.JobModel = selectedJob;
         }
     }
 }

@@ -40,12 +40,7 @@ namespace RFDesktopManager.ViewModels
         {
             RFRepo.AddJob(JobModel);
             MessageBox.Show("Job added");
-        }
-
-
-
-
-        
+        }      
 
        public event PropertyChangedEventHandler PropertyChanged;
 

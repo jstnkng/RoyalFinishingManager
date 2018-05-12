@@ -21,7 +21,7 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class EditJobPage : UserControl
     {
-        private EditJobViewModel _viewModel;
+        public static EditJobViewModel _viewModel;
         public EditJobPage()
         {
             InitializeComponent();

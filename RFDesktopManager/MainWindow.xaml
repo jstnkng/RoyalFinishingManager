@@ -9,26 +9,26 @@
         WindowState="Maximized"
         Title="Royal Finishing Manager" Height="750" Width="1500">
     <Grid>
-        <TabControl Grid.RowSpan="2" >
-            <TabItem Header="Home">
+        <TabControl Name="PageController" Grid.RowSpan="2" >
+            <TabItem Name="HomePage" Header="Home">
                 <Pages:HomePage Margin="0,0,11,8"></Pages:HomePage>
             </TabItem>
-            <TabItem Header="Jobs">
+            <TabItem Name="JobsPage" Header="Jobs">
                 <Pages:JobsPage Margin="10,5,9,0"></Pages:JobsPage>
             </TabItem>
-            <TabItem Header="Edit Job">
+            <TabItem Name="EditJobsPage" Header="Edit Job">
                 <Pages:EditJobPage Margin="10,5,9,0"></Pages:EditJobPage>
             </TabItem>
-            <TabItem Header="AddJob">
+            <TabItem Name="AddJobsPage" Header="AddJob">
                 <Pages:AddJobPage Margin="10,5,9,0"></Pages:AddJobPage>
             </TabItem>
-            <TabItem Header="Add Labor">
+            <TabItem Name="AddLaborPage" Header="Add Labor">
                 <Pages:AddLaborPage Margin="10,5,9,0"></Pages:AddLaborPage>
             </TabItem>
-            <TabItem Header="Add Material">
+            <TabItem Name="AddMaterialPage" Header="Add Material">
                 <Pages:AddMaterialPage Margin="10,5,9,0"></Pages:AddMaterialPage>
             </TabItem>
-            <TabItem Header="Time Cards">
+            <TabItem Name="TimeCardPage" Header="Time Cards">
                 <Pages:TimeCardPage Margin="10,5,9,0"></Pages:TimeCardPage>
             </TabItem>
         </TabControl>
