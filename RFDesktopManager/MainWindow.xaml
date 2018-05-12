@@ -6,14 +6,29 @@
         xmlns:local="clr-namespace:RFDesktopManager"
         xmlns:Pages="clr-namespace:RFDesktopManager.Pages"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="750" Width="1500">
     <Grid>
         <TabControl >
-            <TabItem Header="Home" Name="Test">
-                
+            <TabItem Header="Home">
+                <Pages:HomePage Margin="0,0,11,8"></Pages:HomePage>
             </TabItem>
             <TabItem Header="Jobs">
                 <Pages:JobsPage Margin="10,5,9,0"></Pages:JobsPage>
+            </TabItem>
+            <TabItem Header="Edit Job">
+                <Pages:EditJobPage Margin="10,5,9,0"></Pages:EditJobPage>
+            </TabItem>
+            <TabItem Header="AddJob">
+                <Pages:AddJobPage Margin="10,5,9,0"></Pages:AddJobPage>
+            </TabItem>
+            <TabItem Header="Add Labor">
+                <Pages:AddLaborPage Margin="10,5,9,0"></Pages:AddLaborPage>
+            </TabItem>
+            <TabItem Header="Add Material">
+                <Pages:AddMaterialPage Margin="10,5,9,0"></Pages:AddMaterialPage>
+            </TabItem>
+            <TabItem Header="Time Cards">
+                <Pages:TimeCardPage Margin="10,5,9,0"></Pages:TimeCardPage>
             </TabItem>
         </TabControl>
     </Grid>

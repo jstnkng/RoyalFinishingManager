@@ -6,20 +6,29 @@
              xmlns:local="clr-namespace:RFDesktopManager.Pages"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="600">
+             Height="750" Width="1500">
     <Grid Margin="0,0,20,10">
-        <Label Content="Date:" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top"/>
-        <DatePicker SelectedDate="{Binding Date}" DataContext="{Binding LaborModel}" HorizontalAlignment="Left" Margin="52,36,0,0" VerticalAlignment="Top"/>
-        <Label Content="Job:" HorizontalAlignment="Left" Margin="185,36,0,0" VerticalAlignment="Top"/>
-        <ComboBox ItemsSource="{Binding JobsList}" DisplayMemberPath="Name" Text ="{Binding SelectedJob}" HorizontalAlignment="Left" Margin="221,38,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Hours:" HorizontalAlignment="Left" Margin="371,36,0,0" VerticalAlignment="Top"/>
-        <xctk:TimePicker Text="{Binding Time1}" HorizontalAlignment="Left" Margin="449,10,0,0" VerticalAlignment="Top" Width="102"/>
-        <xctk:TimePicker Text="{Binding Time2}" HorizontalAlignment="Left" Margin="449,35,0,0" VerticalAlignment="Top" Width="102"/>
-        <xctk:TimePicker Text="{Binding Time3}"  HorizontalAlignment="Left" Margin="449,60,0,0" VerticalAlignment="Top" Width="102"/>
-        <xctk:TimePicker Text="{Binding Time4}" HorizontalAlignment="Left" Margin="449,85,0,0" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Total hours:" HorizontalAlignment="Left" Margin="440,121,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding Hours}" DataContext="{Binding LaborModel}" HorizontalAlignment="Left" Margin="516,121,0,0" VerticalAlignment="Top"/>
-        <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="185,112,0,0" VerticalAlignment="Top" Width="85" Click="btnAdd_Click" Height="29"/>
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="102,69,0,0" VerticalAlignment="Top"/>
+        <DatePicker SelectedDate="{Binding Date}" DataContext="{Binding LaborModel}" HorizontalAlignment="Left" Margin="160,70,0,0" VerticalAlignment="Top" Height="38" Width="170"/>
+        <Label Content="Job:" HorizontalAlignment="Left" Margin="32,188,0,0" VerticalAlignment="Top"/>
+        <ComboBox ItemsSource="{Binding JobsList}" DisplayMemberPath="Name" Text ="{Binding SelectedJob}" HorizontalAlignment="Left" Margin="82,188,0,0" VerticalAlignment="Top" Width="228"/>
+        <Label Content="Hours:" HorizontalAlignment="Left" Margin="340,162,0,0" VerticalAlignment="Top"/>
+        <xctk:TimePicker Text="{Binding Time1}" HorizontalAlignment="Left" Margin="426,52,0,0" VerticalAlignment="Top" Width="188" Height="35"/>
+        <xctk:TimePicker Text="{Binding Time2}" HorizontalAlignment="Left" Margin="426,112,0,0" VerticalAlignment="Top" Width="188" Height="44"/>
+        <xctk:TimePicker Text="{Binding Time3}"  HorizontalAlignment="Left" Margin="426,203,0,0" VerticalAlignment="Top" Width="188" Height="29"/>
+        <xctk:TimePicker Text="{Binding Time4}" HorizontalAlignment="Left" Margin="426,268,0,0" VerticalAlignment="Top" Width="188" Height="32"/>
+        <Label Content="Total hours:" HorizontalAlignment="Left" Margin="449,358,0,0" VerticalAlignment="Top"/>
+        <Label Content="40" DataContext="{Binding LaborModel}" HorizontalAlignment="Left" Margin="555,358,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="302,434,0,0" VerticalAlignment="Top" Width="138" Click="btnAdd_Click" Height="42"/>
+        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="648" Margin="735,20,0,0" VerticalAlignment="Top" Width="602">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date, StringFormat=d}"/>
+                    <GridViewColumn Header="Job" DisplayMemberBinding="{Binding JobName}"/>
+                    <GridViewColumn Header="Hours" DisplayMemberBinding="{Binding Hours}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </UserControl>

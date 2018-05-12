@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RFDesktopManager.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             Height="750" Width="1500">
     <Grid Margin="0,0,18,10">
         <Label Content="Employee:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <ComboBox ItemsSource="{Binding EmployeeList}" SelectedValue="{Binding SelectedEmployee}" DisplayMemberPath="FullName" HorizontalAlignment="Left" Margin="79,14,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Start date:" HorizontalAlignment="Left" Margin="225,10,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding StartDate}" HorizontalAlignment="Left" Margin="294,10,0,0" VerticalAlignment="Top"/>
-        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="248" Margin="25,88,0,0" VerticalAlignment="Top" Width="330">
+        <ComboBox ItemsSource="{Binding EmployeeList}" SelectedValue="{Binding SelectedEmployee}" DisplayMemberPath="FullName" HorizontalAlignment="Left" Margin="79,14,0,0" VerticalAlignment="Top" Width="178"/>
+        <Label Content="Start date:" HorizontalAlignment="Left" Margin="296,5,0,0" VerticalAlignment="Top"/>
+        <Label Content="5/11/2018" HorizontalAlignment="Left" Margin="365,5,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
+        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="648" Margin="565,20,0,0" VerticalAlignment="Top" Width="602">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date, StringFormat=d}"/>
@@ -20,13 +20,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Total hours: " HorizontalAlignment="Left" Margin="118,341,0,0" VerticalAlignment="Top"/>
-        <Button Content="Prev Week" HorizontalAlignment="Left" Margin="25,347,0,0" VerticalAlignment="Top" Width="70"/>
-        <Button Content="Next Week" HorizontalAlignment="Left" Margin="239,347,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="End date:" HorizontalAlignment="Left" Margin="225,36,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding EndDate}" HorizontalAlignment="Left" Margin="294,36,0,0" VerticalAlignment="Top"/>
-        <Label Content="{Binding Hours}" HorizontalAlignment="Left" Margin="192,341,0,0" VerticalAlignment="Top"/>
-        <Button Name="btnAddLabor" Content="+" HorizontalAlignment="Left" Margin="372,176,0,0" VerticalAlignment="Top" Width="41" Height="38" Click="btnAddLabor_Click"/>
+        <Label Content="Total hours: " HorizontalAlignment="Left" Margin="171,366,0,0" VerticalAlignment="Top"/>
+        <Button Content="Prev Week" HorizontalAlignment="Left" Margin="24,322,0,0" VerticalAlignment="Top" Width="96" Height="114"/>
+        <Button Content="Next Week" HorizontalAlignment="Left" Margin="352,322,0,0" VerticalAlignment="Top" Width="104" Height="114"/>
+        <Label Content="End date:" HorizontalAlignment="Left" Margin="306,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="5/18/2018" HorizontalAlignment="Left" Margin="365,36,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
+        <Label Content="40" HorizontalAlignment="Left" Margin="260,366,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

@@ -5,16 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RFDesktopManager.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             Height="750" Width="1500">
     <Grid Margin="0,0,11,6">
-        <Label Content="Job Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox DataContext="{Binding JobModel}" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="81,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245"/>
-        <Label Content="Job Description:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="84" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="335" Margin="10,82,0,0"/>
+        <Label Content="Job Name:" HorizontalAlignment="Left" Margin="436,69,0,0" VerticalAlignment="Top"/>
+        <TextBox DataContext="{Binding JobModel}" Text="{Binding Name}" HorizontalAlignment="Left" Height="33" Margin="532,62,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="483"/>
+        <Label Content="Job Description:" HorizontalAlignment="Left" Margin="340,176,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="112" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="543" Margin="472,176,0,0"/>
         <Label Content="Address:
-               " HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
-        <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="23" Margin="76,184,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="269"/>
-        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="148,254,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
+               " HorizontalAlignment="Left" Margin="532,364,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
+        <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="73" Margin="660,364,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="355"/>
+        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="714,556,0,0" VerticalAlignment="Top" Width="237" Click="btnSave_Click" Height="62"/>
 
     </Grid>
 </UserControl>

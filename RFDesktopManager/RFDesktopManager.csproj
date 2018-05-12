@@ -73,30 +73,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Pages\AddJob.xaml.cs">
-      <DependentUpon>AddJob.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\AddJobPage.xaml.cs">
       <DependentUpon>AddJobPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddLaborPage.xaml.cs">
       <DependentUpon>AddLaborPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AddMaterial.xaml.cs">
-      <DependentUpon>AddMaterial.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\AddMaterialPage.xaml.cs">
       <DependentUpon>AddMaterialPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\EditJob.xaml.cs">
-      <DependentUpon>EditJob.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\LaborModel.cs" />
-    <Compile Include="Pages\AddLabor.xaml.cs">
-      <DependentUpon>AddLabor.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\EditJobPage.xaml.cs">
       <DependentUpon>EditJobPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\JobsPage.xaml.cs">
       <DependentUpon>JobsPage.xaml</DependentUpon>
@@ -112,10 +103,6 @@
     <Compile Include="ViewModels\EditJobViewModel.cs" />
     <Compile Include="ViewModels\JobsViewModel.cs" />
     <Compile Include="ViewModels\TimeCardViewModel.cs" />
-    <Page Include="Pages\AddJob.xaml">
-      <SubType>Designer</SubType>
-      <Generator>XamlIntelliSenseFileGenerator</Generator>
-    </Page>
     <Page Include="Pages\AddJobPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,19 +111,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\AddMaterial.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\AddMaterialPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\EditJob.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\AddLabor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,7 +119,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Jobs.xaml">
+    <Page Include="Pages\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,18 +136,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RoyalFinishing.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Jobs.xaml.cs">
-      <DependentUpon>Jobs.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\JobsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\TimeCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,9 +150,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\TimeCard.xaml.cs">
-      <DependentUpon>TimeCard.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

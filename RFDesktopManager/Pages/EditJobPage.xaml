@@ -5,17 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RFDesktopManager.Pages"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             Height="750" Width="1500">
     <Grid Margin="0,0,11,6">
         <Label Content="Job Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-        <TextBox DataContext="{Binding JobModel}" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="81,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="245"/>
+        <TextBox DataContext="{Binding JobModel}" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="81,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="443"/>
         <Label Content="Job Description:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="84" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="335" Margin="10,82,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="84" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="514" Margin="10,82,0,0"/>
         <Label Content="Address:
                " HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
-        <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="23" Margin="76,184,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="269"/>
-        <Label Content="Labor:" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top"/>
-        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="100" Margin="10,253,0,0" VerticalAlignment="Top" Width="335">
+        <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="56" Margin="76,184,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="448"/>
+        <Label Content="Labor:" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="100" Margin="10,291,0,0" VerticalAlignment="Top" Width="514">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date, StringFormat=d}"/>
@@ -24,12 +24,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Total hours: 0" HorizontalAlignment="Left" Margin="256,358,0,0" VerticalAlignment="Top"/>
-        <Button Name="btnInvoice" Content="Create invoice" HorizontalAlignment="Left" Margin="266,591,0,0" VerticalAlignment="Top" Width="79"  Height="43"/>
-        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="134,618,0,0" VerticalAlignment="Top" Width="76" />
-        <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="210,212,0,0" VerticalAlignment="Top" Width="75" Click="btnDirections_Click" />
-        <Label Content="Materials:" HorizontalAlignment="Left" Margin="15,396,0,0" VerticalAlignment="Top"/>
-        <ListView ItemsSource="{Binding MaterialsList}" HorizontalAlignment="Left" Height="124" Margin="15,427,0,0" VerticalAlignment="Top" Width="330">
+        <Label Content="Total hours: 0" HorizontalAlignment="Left" Margin="424,396,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnInvoice" Content="Print invoice" HorizontalAlignment="Left" Margin="914,676,0,0" VerticalAlignment="Top" Width="190"  Height="43"/>
+        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="126,612,0,0" VerticalAlignment="Top" Width="92" Height="50" />
+        <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="236,245,0,0" VerticalAlignment="Top" Width="75" Click="btnDirections_Click" />
+        <Label Content="Materials:" HorizontalAlignment="Left" Margin="29,414,0,0" VerticalAlignment="Top" Height="41" Width="76"/>
+        <ListView ItemsSource="{Binding MaterialsList}" HorizontalAlignment="Left" Height="124" Margin="39,460,0,0" VerticalAlignment="Top" Width="485">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item" DisplayMemberBinding="{Binding Item}"/>
@@ -39,6 +39,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <TextBox HorizontalAlignment="Left" Height="635" Margin="674,14,0,0" TextWrapping="Wrap" Text="Invoice" VerticalAlignment="Top" Width="646"/>
 
     </Grid>
 </UserControl>

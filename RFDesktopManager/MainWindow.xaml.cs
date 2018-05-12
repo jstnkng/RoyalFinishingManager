@@ -30,30 +30,21 @@ namespace RFDesktopManager
 
         private void btnAddJob_Click(object sender, RoutedEventArgs e)
         {
-            Window jobWindow = new AddJob();
-            jobWindow.Activate();
-            jobWindow.Show();
+
         }
 
         private void btnJobs_Click(object sender, RoutedEventArgs e)
         {
-            Window jobsWindow = new Jobs();
-            jobsWindow.Activate();
-            jobsWindow.Show();
         }
 
         private void btnTimeCards_Click(object sender, RoutedEventArgs e)
         {
-            Window timeCardWindow = new TimeCard();
-            timeCardWindow.Activate();
-            timeCardWindow.Show();
+
         }
 
         private void btnMaterials_Click(object sender, RoutedEventArgs e)
         {
-            Window materialWindow = new AddMaterial();
-            materialWindow.Activate();
-            materialWindow.Show();
+
         }
     }
 }
