@@ -1,4 +1,5 @@
 ﻿using RFDesktopManager.Data;
+using RFDesktopManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,12 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class JobsPage : UserControl
     {
+        private JobsViewModel _viewModel;
         public JobsPage()
         {
             InitializeComponent();
+            _viewModel = new JobsViewModel();
+            DataContext = _viewModel;
         }
 
         private void listJobs_SelectionChanged(object sender, SelectionChangedEventArgs e)

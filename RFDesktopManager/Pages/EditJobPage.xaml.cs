@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RFDesktopManager.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class EditJobPage : UserControl
     {
+        private EditJobViewModel _viewModel;
         public EditJobPage()
         {
             InitializeComponent();
+            _viewModel = new EditJobViewModel(new Data.Job());
+            DataContext = _viewModel;
+
         }
 
         private void btnDirections_Click(object sender, RoutedEventArgs e)

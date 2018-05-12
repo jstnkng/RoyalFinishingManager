@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RFDesktopManager.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class AddLaborPage : UserControl
     {
+        private AddLaborViewModel _viewModel;
         public AddLaborPage()
         {
             InitializeComponent();
+            _viewModel = new AddLaborViewModel(1);
+            DataContext = _viewModel;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)

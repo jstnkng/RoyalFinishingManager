@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RFDesktopManager.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,12 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class TimeCardPage : UserControl
     {
+        private TimeCardViewModel _viewModel;
         public TimeCardPage()
         {
             InitializeComponent();
+            _viewModel = new TimeCardViewModel();
+            DataContext = _viewModel;
         }
 
         private void btnAddLabor_Click(object sender, RoutedEventArgs e)

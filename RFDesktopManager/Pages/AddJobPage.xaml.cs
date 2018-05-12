@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RFDesktopManager.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class AddJobPage : UserControl
     {
+        private AddJobViewModel _viewModel;
+
         public AddJobPage()
         {
             InitializeComponent();
+            _viewModel = new AddJobViewModel();
+            DataContext = _viewModel;
         }
 
         private void btnInvoice_Click(object sender, RoutedEventArgs e)
