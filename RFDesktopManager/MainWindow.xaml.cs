@@ -30,6 +30,14 @@ namespace RFDesktopManager
             //Test.Content = Application.LoadComponent(new Uri("RFDesktopManager;content/TestPage.xaml", UriKind.Relative));
         }
 
-        
+        private void PageController_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabItem selectedTab = (TabItem)PageController.SelectedItem;
+            if (selectedTab == JobsPage)
+            {
+                RFDesktopManager.Pages.JobsPage tabPage = (RFDesktopManager.Pages.JobsPage)selectedTab.Content;
+                
+            }
+        }
     }
 }

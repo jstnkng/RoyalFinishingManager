@@ -45,6 +45,11 @@ namespace RFDesktopManager.ViewModels
             RaisePropertyChanged("JobsList");
         }
 
+        public void Refresh()
+        {
+            _JobsList = RFRepo.GetJobs();
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private void RaisePropertyChanged(String propertyName = "")

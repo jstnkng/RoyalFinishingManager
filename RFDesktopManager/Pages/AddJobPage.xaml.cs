@@ -37,7 +37,7 @@ namespace RFDesktopManager.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //_viewModel.SaveJob();
+            _viewModel.SaveJob();
         }
     }
 }
