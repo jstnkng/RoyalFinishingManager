@@ -14,6 +14,9 @@
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
                         <GridViewColumn Header="Description"  DisplayMemberBinding="{Binding Description}" />
                         <GridViewColumn Header="Address"  DisplayMemberBinding="{Binding Address}" />
+                        <GridViewColumn Header="City"  DisplayMemberBinding="{Binding City}" />
+                        <GridViewColumn Header="State"  DisplayMemberBinding="{Binding State}" />
+                        <GridViewColumn Header="ZipCode"  DisplayMemberBinding="{Binding ZipCode}" />
                     </GridView>
                 </ListView.View>
             </ListView>

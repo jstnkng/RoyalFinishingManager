@@ -38,22 +38,6 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
-        private string _Address;
-
-        public string Address
-        {
-            get
-            {
-                return _Address;
-            }
-            set
-            {
-                var fullAddress = new StringBuilder();
-
-                
-            }
-        }
-
 
         public EditJobViewModel()
         {
@@ -63,7 +47,14 @@ namespace RFDesktopManager.ViewModels
 
         public void OpenDirections()
         {
-            System.Diagnostics.Process.Start("https://maps.google.com/?q=" + JobModel.Address);
+            var fullAddress = new StringBuilder(JobModel.Address);
+            fullAddress.Append(" ,");
+            fullAddress.Append(JobModel.City);
+            fullAddress.Append(" ,");
+            fullAddress.Append(JobModel.State);
+            fullAddress.Append(" ,");
+            fullAddress.Append(JobModel.ZipCode);
+            System.Diagnostics.Process.Start("https://maps.google.com/?q=" + fullAddress.ToString());
         }
 
         public void SaveJob()

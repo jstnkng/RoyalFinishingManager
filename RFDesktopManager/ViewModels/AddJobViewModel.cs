@@ -33,6 +33,7 @@ namespace RFDesktopManager.ViewModels
             JobModel = new Job();
             JobModel.Name = "";
             JobModel.Address = "";
+            JobModel.City = "hi";
             JobModel.Description = "";
             JobModel.StatusID = 1;         
         }
