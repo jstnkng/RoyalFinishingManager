@@ -18,6 +18,7 @@ namespace RFDesktopManager.Repos
             var db = new RoyalFinishingDataContext();
             db.Jobs.InsertOnSubmit(newJob);
             db.SubmitChanges();
+            MessageBox.Show("Job added");
         }
 
         public static void SaveJob(Job currentJob)
@@ -29,6 +30,7 @@ namespace RFDesktopManager.Repos
             job.Name = currentJob.Name;
             job.StatusID = currentJob.StatusID;
             db.SubmitChanges();
+            MessageBox.Show("Job saved");
         }
 
         public static List<string> GetJobStatusList()

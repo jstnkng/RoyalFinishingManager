@@ -38,6 +38,23 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private string _Address;
+
+        public string Address
+        {
+            get
+            {
+                return _Address;
+            }
+            set
+            {
+                var fullAddress = new StringBuilder();
+
+                
+            }
+        }
+
+
         public EditJobViewModel()
         {
             JobModel = new Job();
