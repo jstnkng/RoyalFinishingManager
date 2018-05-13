@@ -38,11 +38,23 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private List<MaterialHistory> _MaterialsList;
+
+        public List<MaterialHistory> MaterialsList
+        {
+            get { return _MaterialsList; }
+            set
+            {
+                _MaterialsList = value;
+                RaisePropertyChanged("MaterialsList");
+            }
+        }
 
         public EditJobViewModel()
         {
             JobModel = new Job();
             StatusList = RFRepo.GetJobStatusList();
+
         }
 
         public void OpenDirections()

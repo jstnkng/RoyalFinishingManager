@@ -27,7 +27,6 @@ namespace RFDesktopManager
         {
             InitializeComponent();
             PageControl = PageController;
-            //Test.Content = Application.LoadComponent(new Uri("RFDesktopManager;content/TestPage.xaml", UriKind.Relative));
         }
 
         private void PageController_SelectionChanged(object sender, SelectionChangedEventArgs e)

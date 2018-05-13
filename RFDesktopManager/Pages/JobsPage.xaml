@@ -16,7 +16,6 @@
                         <GridViewColumn Header="Address"  DisplayMemberBinding="{Binding Address}" />
                         <GridViewColumn Header="City"  DisplayMemberBinding="{Binding City}" />
                         <GridViewColumn Header="State"  DisplayMemberBinding="{Binding State}" />
-                        <GridViewColumn Header="ZipCode"  DisplayMemberBinding="{Binding ZipCode}" />
                     </GridView>
                 </ListView.View>
             </ListView>
@@ -27,6 +26,7 @@
             <ComboBoxItem Content="Name"/>
             <ComboBoxItem Content="Date (Newest - oldest)"/>
             <ComboBoxItem Content="Date (Oldest - newest)"/>
+            <ComboBoxItem Content="City"/>
         </ComboBox>
         <CheckBox Name="chkStatus0"  Content="All" HorizontalAlignment="Left" Margin="30,49,0,0" VerticalAlignment="Top" Checked="chkStatus0_Checked"/>
         <CheckBox Name="chkStatus2" Content="In Progress" HorizontalAlignment="Left" Margin="85,49,0,0" VerticalAlignment="Top" Checked="chkStatus2_Checked"/>

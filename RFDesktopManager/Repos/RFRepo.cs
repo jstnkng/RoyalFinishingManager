@@ -193,5 +193,12 @@ namespace RFDesktopManager.Repos
                 MessageBox.Show("Unable to save. Try again shortly", "An error occured");
             }
         }
+
+        public static List<MaterialHistory> GetJobMaterials(int jobID)
+        {
+            var db = new RoyalFinishingDataContext();
+            var list = db.MaterialHistories.Where(x => x.JobID == jobID).ToList();
+            return list;
+        }
     }
 }

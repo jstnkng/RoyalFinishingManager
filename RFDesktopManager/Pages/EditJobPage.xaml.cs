@@ -41,5 +41,9 @@ namespace RFDesktopManager.Pages
             _viewModel.SaveJob();
         }
 
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
