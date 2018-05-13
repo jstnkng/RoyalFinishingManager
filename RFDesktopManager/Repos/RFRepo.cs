@@ -20,10 +20,49 @@ namespace RFDesktopManager.Repos
             db.SubmitChanges();
         }
 
-        public static List<Job> GetJobs()
+        public static void SaveJob(Job currentJob)
         {
             var db = new RoyalFinishingDataContext();
-            return db.Jobs.ToList();
+            var job = db.Jobs.FirstOrDefault(x => x.ID == currentJob.ID);
+            job.Address = currentJob.Address;
+            job.Description = currentJob.Description;
+            job.Name = currentJob.Name;
+            job.StatusID = currentJob.StatusID;
+            db.SubmitChanges();
+        }
+
+        public static List<string> GetJobStatusList()
+        {
+            var db = new RoyalFinishingDataContext();
+            var statusList = db.JobStatus.ToArray().ToList();
+            var list = new List<string>();
+            foreach (JobStatus statusType in statusList){
+                list.Add(statusType.Status);
+            }
+            return list;
+        }
+
+        public static int GetStatusID(string status)
+        {
+            var db = new RoyalFinishingDataContext();
+            var statusType = db.JobStatus.FirstOrDefault(x => x.Status == status);
+            return statusType.ID;
+        }
+
+        public static string GetStatusType(int id)
+        {
+            var db = new RoyalFinishingDataContext();
+            var statusType = db.JobStatus.FirstOrDefault(x => x.ID == id);
+            return statusType.Status;
+        }
+
+        public static List<Job> GetJobs(int status)
+        {
+
+            var db = new RoyalFinishingDataContext();
+            if (status == 0)
+                return db.Jobs.ToList();
+            else return db.Jobs.Where(x => x.StatusID == status).ToList();
 
         }
 

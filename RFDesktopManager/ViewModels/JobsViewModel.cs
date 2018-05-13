@@ -1,4 +1,5 @@
 ﻿using RFDesktopManager.Data;
+using RFDesktopManager.Pages;
 using RFDesktopManager.Repos;
 using System;
 using System.Collections.Generic;
@@ -35,19 +36,26 @@ namespace RFDesktopManager.ViewModels
             }
             set
             {
+                if (value != null)
+                {
+                    MainWindow.PageControl.SelectedIndex = 2;
+                    EditJobPage._viewModel.JobModel = value;
+                    EditJobPage._viewModel.SelectedStatus = RFRepo.GetStatusType(value.StatusID);
+                }
                 _selectedJob = value;
             }
         }
 
         public JobsViewModel()
         {
-            _JobsList = RFRepo.GetJobs();
+            _JobsList = RFRepo.GetJobs(0);
             RaisePropertyChanged("JobsList");
         }
 
-        public void Refresh()
+        public void Refresh(int status)
         {
-            _JobsList = RFRepo.GetJobs();
+            JobsList = RFRepo.GetJobs(status);
+            RaisePropertyChanged("JobsList");
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

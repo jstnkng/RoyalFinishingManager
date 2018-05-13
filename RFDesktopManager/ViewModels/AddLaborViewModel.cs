@@ -29,7 +29,7 @@ namespace RFDesktopManager.ViewModels
 
         public AddLaborViewModel(int employeeID)
         {
-            JobsList = RFRepo.GetJobs();
+            JobsList = RFRepo.GetJobs(0);
             LaborModel = new Labor();
             LaborModel.EmployeeID = employeeID;
         }

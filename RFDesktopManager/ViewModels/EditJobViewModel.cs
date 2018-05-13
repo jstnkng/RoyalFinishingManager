@@ -38,16 +38,36 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
-        public EditJobViewModel(Job selectedJob)
+        public EditJobViewModel()
         {
-            JobModel = selectedJob;
-            LaborList = RFRepo.GetJobLabors(selectedJob.ID);
+            JobModel = new Job();
+            StatusList = RFRepo.GetJobStatusList();
         }
 
         public void OpenDirections()
         {
             System.Diagnostics.Process.Start("https://maps.google.com/?q=" + JobModel.Address);
         }
+
+        public void SaveJob()
+        {
+            RFRepo.SaveJob(JobModel);
+        }
+
+        private string _SelectedStatus;
+
+        public string SelectedStatus
+        {
+            get { return _SelectedStatus; }
+            set
+            {
+                _SelectedStatus = value;
+                JobModel.StatusID = RFRepo.GetStatusID(SelectedStatus);
+                RaisePropertyChanged("SelectedStatus");
+            }
+        }
+
+        public List<string> StatusList { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

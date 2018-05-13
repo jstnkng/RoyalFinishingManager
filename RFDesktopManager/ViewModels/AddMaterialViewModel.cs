@@ -121,7 +121,7 @@ namespace RFDesktopManager.ViewModels
         {
             EmployeeList = RFRepo.GetEmployees();
             MaterialList = RFRepo.GetMaterials();
-            JobList = RFRepo.GetJobs();
+            JobList = RFRepo.GetJobs(0);
             Model = new MaterialHistory();
         }
 

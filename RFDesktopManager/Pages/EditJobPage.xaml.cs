@@ -1,4 +1,5 @@
-﻿using RFDesktopManager.ViewModels;
+﻿using RFDesktopManager.Repos;
+using RFDesktopManager.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +26,20 @@ namespace RFDesktopManager.Pages
         public EditJobPage()
         {
             InitializeComponent();
-            _viewModel = new EditJobViewModel(new Data.Job());
+            _viewModel = new EditJobViewModel();
             DataContext = _viewModel;
 
         }
 
         private void btnDirections_Click(object sender, RoutedEventArgs e)
         {
-            //_viewModel.OpenDirections();
+            _viewModel.OpenDirections();
         }
+
+        private void btnSave_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.SaveJob();
+        }
+
     }
 }
