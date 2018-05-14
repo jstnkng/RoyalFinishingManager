@@ -38,9 +38,9 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
-        private List<MaterialHistory> _MaterialsList;
+        private List<MaterialModel> _MaterialsList;
 
-        public List<MaterialHistory> MaterialsList
+        public List<MaterialModel> MaterialsList
         {
             get { return _MaterialsList; }
             set
@@ -54,7 +54,6 @@ namespace RFDesktopManager.ViewModels
         {
             JobModel = new Job();
             StatusList = RFRepo.GetJobStatusList();
-
         }
 
         public void OpenDirections()

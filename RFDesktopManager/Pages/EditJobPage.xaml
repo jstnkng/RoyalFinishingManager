@@ -27,14 +27,14 @@
         <Label Content="Total hours: 0" HorizontalAlignment="Left" Margin="261,658,0,0" VerticalAlignment="Top"/>
         <Button Name="btnInvoice" Content="Print invoice" HorizontalAlignment="Left" Margin="914,676,0,0" VerticalAlignment="Top" Width="190"  Height="43"/>
         <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="290,705,0,0" VerticalAlignment="Top" Width="105" Height="29" Click="btnSave_Click" />
-        <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="650,166,0,0" VerticalAlignment="Top" Width="74" Click="btnDirections_Click" />
+        <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="412,215,0,0" VerticalAlignment="Top" Width="76" Click="btnDirections_Click" Height="37" />
         <Label Content="Materials:" HorizontalAlignment="Left" Margin="389,305,0,0" VerticalAlignment="Top" Height="41" Width="76"/>
         <ListView ItemsSource="{Binding MaterialsList}" HorizontalAlignment="Left" Height="322" Margin="389,336,0,0" VerticalAlignment="Top" Width="355" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Item" DisplayMemberBinding="{Binding Item}"/>
+                    <GridViewColumn Header="Item" DisplayMemberBinding="{Binding MaterialName}"/>
                     <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding Quantity}"/>
-                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding CostPerItem}"/>
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Cost}"/>
                     <GridViewColumn Header="Description" DisplayMemberBinding="{Binding Description}"/>
                 </GridView>
             </ListView.View>
@@ -48,6 +48,7 @@
         <TextBox DataContext="{Binding JobModel}" Text="{Binding City}" HorizontalAlignment="Left" Height="23" Margin="71,205,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233"/>
         <TextBox DataContext="{Binding JobModel}" Text="{Binding State}" HorizontalAlignment="Left" Height="23" Margin="71,236,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233"/>
         <TextBox DataContext="{Binding JobModel}" Text="{Binding ZipCode}" HorizontalAlignment="Left" Height="23" Margin="71,264,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233"/>
+        <Button Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="669,227,0,0" VerticalAlignment="Top" Width="75" Click="btnRefresh_Click"/>
 
     </Grid>
 </UserControl>

@@ -76,6 +76,7 @@
     <Compile Include="Data\RoyalFinishing.cs">
       <DependentUpon>RoyalFinishing.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Models\MaterialModel.cs" />
     <Compile Include="Pages\AddJobPage.xaml.cs">
       <DependentUpon>AddJobPage.xaml</DependentUpon>
     </Compile>

@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace RFDesktopManager.Pages
 {
-    /// <summary>
-    /// Interaction logic for AddMaterialPage.xaml
-    /// </summary>
     public partial class AddMaterialPage : UserControl
     {
         private AddMaterialViewModel _viewModel;
@@ -32,7 +29,7 @@ namespace RFDesktopManager.Pages
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            //_viewModel.Save();
+            _viewModel.Save();
         }
     }
 }

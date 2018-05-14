@@ -19,7 +19,7 @@
             <TabItem Name="EditJobsPage" Header="Edit Job">
                 <Pages:EditJobPage Margin="10,5,9,0"></Pages:EditJobPage>
             </TabItem>
-            <TabItem Name="AddJobsPage" Header="AddJob">
+            <TabItem Name="AddJobsPage" Header="Add Job">
                 <Pages:AddJobPage Margin="10,5,9,0"></Pages:AddJobPage>
             </TabItem>
             <TabItem Name="AddLaborPage" Header="Add Labor">

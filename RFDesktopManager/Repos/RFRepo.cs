@@ -156,6 +156,12 @@ namespace RFDesktopManager.Repos
             return db.Materials.FirstOrDefault(x => x.Item == materialName);
         }
 
+        public static string GetMaterialName (int id)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Materials.FirstOrDefault(x => x.ID == id).Item;
+        }
+
         public static bool InMaterials(string name)
         {
             var db = new RoyalFinishingDataContext();
@@ -200,11 +206,21 @@ namespace RFDesktopManager.Repos
             }
         }
 
-        public static List<MaterialHistory> GetJobMaterials(int jobID)
+        public static List<MaterialModel> GetJobMaterials(int jobID)
         {
             var db = new RoyalFinishingDataContext();
             var list = db.MaterialHistories.Where(x => x.JobID == jobID).ToList();
-            return list;
+            var materialList = new List<MaterialModel>();
+            foreach (var material in list)
+            {
+                var materialModel = new MaterialModel();
+                materialModel.Cost = material.CostPerItem;
+                materialModel.Description = material.Description;
+                materialModel.Quantity = material.Quantity;
+                materialModel.MaterialName = GetMaterialName(material.ItemID);
+                materialList.Add(materialModel);
+            }
+            return materialList;
         }
     }
 }

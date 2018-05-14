@@ -45,5 +45,11 @@ namespace RFDesktopManager.Pages
         {
 
         }
+
+        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.MaterialsList = RFRepo.GetJobMaterials(_viewModel.JobModel.ID);
+            _viewModel.LaborList = RFRepo.GetJobLabors(_viewModel.JobModel.ID);
+        }
     }
 }

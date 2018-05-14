@@ -31,6 +31,7 @@
         </ListView>
         <Label Content="Employee:" HorizontalAlignment="Left" Margin="15,112,0,0" VerticalAlignment="Top"/>
         <ComboBox DisplayMemberPath="FullName" Text="{Binding SelectedEmployee}" ItemsSource="{Binding EmployeeList}" HorizontalAlignment="Left" Margin="78,116,0,0" VerticalAlignment="Top" Width="228"/>
+        <CheckBox Content="All jobs" HorizontalAlignment="Left" Margin="127,238,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

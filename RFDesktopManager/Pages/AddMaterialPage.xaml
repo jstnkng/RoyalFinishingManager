@@ -25,5 +25,6 @@
         </Button>
         <Label Content="Job:" HorizontalAlignment="Left" Margin="383,221,0,0" VerticalAlignment="Top"/>
         <ComboBox ItemsSource="{Binding JobList}" DisplayMemberPath="Name" SelectedItem="{Binding SelectedJob}" HorizontalAlignment="Left" Margin="419,221,0,0" VerticalAlignment="Top" Width="292"/>
+        <CheckBox Content="All jobs" HorizontalAlignment="Left" Margin="767,221,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
