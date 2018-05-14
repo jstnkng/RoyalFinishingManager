@@ -25,13 +25,13 @@ namespace RFDesktopManager.Pages
         public AddLaborPage()
         {
             InitializeComponent();
-            _viewModel = new AddLaborViewModel(1);
+            _viewModel = new AddLaborViewModel();
             DataContext = _viewModel;
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //_viewModel.AddLabor();
+            _viewModel.AddLabor();
         }
     }
 }

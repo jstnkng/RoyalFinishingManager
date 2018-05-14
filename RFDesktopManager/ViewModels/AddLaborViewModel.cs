@@ -27,11 +27,11 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
-        public AddLaborViewModel(int employeeID)
+        public AddLaborViewModel()
         {
+            EmployeeList = RFRepo.GetEmployees();
             JobsList = RFRepo.GetJobs(0);
             LaborModel = new Labor();
-            LaborModel.EmployeeID = employeeID;
         }
 
         public TimeSpan span1 = new TimeSpan();
@@ -48,6 +48,32 @@ namespace RFDesktopManager.ViewModels
             {
                 _JobsList = value;
                 RaisePropertyChanged("JobsList");
+            }
+        }
+
+        private List<Employee> _EmployeeList;
+
+        public List<Employee> EmployeeList
+        {
+            get { return _EmployeeList; }
+            set
+            {
+                _EmployeeList = value;
+
+                RaisePropertyChanged("EmployeeList");
+            }
+        }
+
+        private string _SelectedEmployee;
+
+        public string SelectedEmployee
+        {
+            get { return _SelectedEmployee; }
+            set
+            {
+                _SelectedEmployee = value;
+                LaborModel.EmployeeID = RFRepo.GetEmployeeID(value);
+                RaisePropertyChanged("SelectedEmployee");
             }
         }
 

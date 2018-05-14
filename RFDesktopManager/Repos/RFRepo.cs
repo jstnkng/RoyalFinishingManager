@@ -92,6 +92,12 @@ namespace RFDesktopManager.Repos
             return db.Employees.FirstOrDefault(x => x.ID == empID).FullName;
         }
 
+        public static int GetEmployeeID(string name)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Employees.FirstOrDefault(x => x.FullName == name).ID;
+        }
+
         public static List<LaborModel> GetEmployeeLabor(int employeeID, DateTime startDate, DateTime endDate)
         {
             var db = new RoyalFinishingDataContext();
