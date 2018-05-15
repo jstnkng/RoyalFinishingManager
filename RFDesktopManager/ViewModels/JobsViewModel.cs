@@ -41,7 +41,12 @@ namespace RFDesktopManager.ViewModels
                     MainWindow.PageControl.SelectedIndex = 2;
                     EditJobPage._viewModel.JobModel = value;
                     EditJobPage._viewModel.LaborList = RFRepo.GetJobLabors(value.ID);
+                    foreach (var labor in EditJobPage._viewModel.LaborList)
+                    {
+                        EditJobPage._viewModel.Hours += labor.Hours;
+                    }
                     EditJobPage._viewModel.MaterialsList = RFRepo.GetJobMaterials(value.ID);
+                    
                     EditJobPage._viewModel.SelectedStatus = RFRepo.GetStatusType(value.StatusID);
                 }
                 _selectedJob = value;

@@ -13,9 +13,9 @@
         <TextBox HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="640" Margin="10,82,0,0"/>
         <Label Content="Address:
                " HorizontalAlignment="Left" Margin="5,166,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
-        <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="23" Margin="71,166,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="310"/>
-        <Label Content="Labor:" HorizontalAlignment="Left" Margin="10,305,0,0" VerticalAlignment="Top"/>
-        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="322" Margin="10,336,0,0" VerticalAlignment="Top" Width="332">
+        <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="23" Margin="71,166,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="394"/>
+        <Label Content="Labor:" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top"/>
+        <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="376" Margin="10,282,0,0" VerticalAlignment="Top" Width="332">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Date, StringFormat=d}"/>
@@ -24,12 +24,12 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Total hours: 0" HorizontalAlignment="Left" Margin="261,658,0,0" VerticalAlignment="Top"/>
-        <Button Name="btnInvoice" Content="Print invoice" HorizontalAlignment="Left" Margin="914,676,0,0" VerticalAlignment="Top" Width="190"  Height="43"/>
+        <Label Content="Total hours:" HorizontalAlignment="Left" Margin="246,658,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnInvoice" Content="Print invoice" HorizontalAlignment="Left" Margin="643,678,0,0" VerticalAlignment="Top" Width="135"  Height="43"/>
         <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="290,705,0,0" VerticalAlignment="Top" Width="105" Height="29" Click="btnSave_Click" />
-        <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="412,215,0,0" VerticalAlignment="Top" Width="76" Click="btnDirections_Click" Height="37" />
-        <Label Content="Materials:" HorizontalAlignment="Left" Margin="389,305,0,0" VerticalAlignment="Top" Height="41" Width="76"/>
-        <ListView ItemsSource="{Binding MaterialsList}" HorizontalAlignment="Left" Height="322" Margin="389,336,0,0" VerticalAlignment="Top" Width="355" SelectionChanged="ListView_SelectionChanged">
+        <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="456,204,0,0" VerticalAlignment="Top" Width="76" Click="btnDirections_Click" Height="23" />
+        <Label Content="Materials:" HorizontalAlignment="Left" Margin="389,251,0,0" VerticalAlignment="Top" Height="26" Width="76"/>
+        <ListView ItemsSource="{Binding MaterialsList}" HorizontalAlignment="Left" Height="376" Margin="389,282,0,0" VerticalAlignment="Top" Width="355" SelectionChanged="ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item" DisplayMemberBinding="{Binding MaterialName}"/>
@@ -39,16 +39,44 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <TextBox HorizontalAlignment="Left" Height="635" Margin="792,14,0,0" TextWrapping="Wrap" Text="Invoice" VerticalAlignment="Top" Width="528"/>
         <ComboBox Name="comboStatus" ItemsSource="{Binding StatusList}" SelectedItem="{Binding SelectedStatus}" HorizontalAlignment="Left" Margin="583,15,0,0" VerticalAlignment="Top" Width="146" />
         <Label Content="Job Status:" HorizontalAlignment="Left" Margin="512,14,0,0" VerticalAlignment="Top"/>
-        <Label Content="City:" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top"/>
-        <Label Content="State:" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top"/>
-        <Label Content="Zip code:" HorizontalAlignment="Left" Margin="10,263,0,0" VerticalAlignment="Top"/>
-        <TextBox DataContext="{Binding JobModel}" Text="{Binding City}" HorizontalAlignment="Left" Height="23" Margin="71,205,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233"/>
-        <TextBox DataContext="{Binding JobModel}" Text="{Binding State}" HorizontalAlignment="Left" Height="23" Margin="71,236,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233"/>
-        <TextBox DataContext="{Binding JobModel}" Text="{Binding ZipCode}" HorizontalAlignment="Left" Height="23" Margin="71,264,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="233"/>
+        <Label Content="City:" HorizontalAlignment="Left" Margin="499,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="State:" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top"/>
+        <Label Content="Zip code:" HorizontalAlignment="Left" Margin="232,201,0,0" VerticalAlignment="Top"/>
+        <TextBox DataContext="{Binding JobModel}" Text="{Binding City}" HorizontalAlignment="Left" Height="23" Margin="537,166,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="195"/>
+        <TextBox DataContext="{Binding JobModel}" Text="{Binding State}" HorizontalAlignment="Left" Height="23" Margin="71,201,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="118"/>
+        <TextBox DataContext="{Binding JobModel}" Text="{Binding ZipCode}" HorizontalAlignment="Left" Height="23" Margin="291,201,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="119"/>
         <Button Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="669,227,0,0" VerticalAlignment="Top" Width="75" Click="btnRefresh_Click"/>
+        <Label Content="{Binding Hours}" HorizontalAlignment="Left" Margin="317,658,0,0" VerticalAlignment="Top"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="693" Margin="862,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="532">
+
+        </Rectangle>
+
+        <Label Content="Invoice" HorizontalAlignment="Left" Margin="1302,28,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date:" HorizontalAlignment="Left" Margin="1227,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="5/13/2018" HorizontalAlignment="Left" Margin="1284,49,0,0" VerticalAlignment="Top"/>
+        <Label Content="Royal Finishing Inc." FontSize="14" FontStyle="Oblique" HorizontalAlignment="Left" Margin="885,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="3530 New Holland St." FontStyle="Oblique" HorizontalAlignment="Left" Margin="885,51,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hudsonville, MI 49426" FontStyle="Oblique" HorizontalAlignment="Left" Margin="885,67,0,0" VerticalAlignment="Top"/>
+        <Label Content="Invoice No." HorizontalAlignment="Left" Margin="1195,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="1431" HorizontalAlignment="Left" Margin="1312,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Bill to:" HorizontalAlignment="Left" Margin="885,115,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer Name" HorizontalAlignment="Left" Margin="890,141,0,0" VerticalAlignment="Top"/>
+        <Label Content="3530 New Holland St." HorizontalAlignment="Left" Margin="889,163,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hudsonville, MI 49426" HorizontalAlignment="Left" Margin="890,187,0,0" VerticalAlignment="Top"/>
+        <Rectangle  HorizontalAlignment="Left" Height="86" Margin="890,141,0,0" Stroke="Black" VerticalAlignment="Top" Width="219"/>
+        <Rectangle HorizontalAlignment="Left" Height="32" Margin="1264,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
+        <Rectangle  HorizontalAlignment="Left" Height="32" Margin="889,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="487"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="1039,251,0,0" VerticalAlignment="Top"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="1302,251,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="890,279,0,0" VerticalAlignment="Top" BorderThickness=" 1" BorderBrush="Black" Height="389" Width="374">
+        </Label>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="1264,279,0,0" VerticalAlignment="Top" BorderThickness=" 1" BorderBrush="Black" Height="389" Width="112"/>
+        <Label FontSize="11" Content="Thank you for your business. It is very much appreciated!" HorizontalAlignment="Left" Margin="890,678,0,0" VerticalAlignment="Top"/>
+        <Label Content="Total:   $" HorizontalAlignment="Left" Margin="1248,673,0,0" VerticalAlignment="Top"/>
+        <Label Content="123.00" HorizontalAlignment="Left" Margin="1293,673,0,0" VerticalAlignment="Top"/>
+        <Label Content="(712)-470-4330" FontStyle="Oblique" HorizontalAlignment="Left" Margin="885,84,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>

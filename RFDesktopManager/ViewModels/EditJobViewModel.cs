@@ -50,6 +50,18 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private decimal _Hours;
+
+        public decimal Hours
+        {
+            get { return _Hours; }
+            set
+            {
+                _Hours = value;
+                RaisePropertyChanged("Hours");
+            }
+        }
+
         public EditJobViewModel()
         {
             JobModel = new Job();

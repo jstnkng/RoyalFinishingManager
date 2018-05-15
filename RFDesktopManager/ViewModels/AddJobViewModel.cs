@@ -13,10 +13,7 @@ namespace RFDesktopManager.ViewModels
 {
     public class AddJobViewModel : DependencyObject, INotifyPropertyChanged
     {
-
-        private Job _JobModel;
-
-        
+        private Job _JobModel;      
 
         public Job JobModel
         {
