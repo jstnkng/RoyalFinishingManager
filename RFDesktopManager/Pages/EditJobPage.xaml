@@ -62,10 +62,14 @@
         <Label Content="Invoice No." HorizontalAlignment="Left" Margin="1195,72,0,0" VerticalAlignment="Top"/>
         <Label Content="1431" HorizontalAlignment="Left" Margin="1312,72,0,0" VerticalAlignment="Top"/>
         <Label Content="Bill to:" HorizontalAlignment="Left" Margin="885,115,0,0" VerticalAlignment="Top"/>
-        <Label Content="Customer Name" HorizontalAlignment="Left" Margin="890,141,0,0" VerticalAlignment="Top"/>
-        <Label Content="3530 New Holland St." HorizontalAlignment="Left" Margin="889,163,0,0" VerticalAlignment="Top"/>
-        <Label Content="Hudsonville, MI 49426" HorizontalAlignment="Left" Margin="890,187,0,0" VerticalAlignment="Top"/>
-        <Rectangle  HorizontalAlignment="Left" Height="86" Margin="890,141,0,0" Stroke="Black" VerticalAlignment="Top" Width="219"/>
+        <Label DataContext="{Binding JobModel}" Content="{Binding Name}" HorizontalAlignment="Left" Margin="890,141,0,0" VerticalAlignment="Top"/>
+        <Label DataContext="{Binding JobModel}" Content="{Binding Address}" HorizontalAlignment="Left" Margin="889,163,0,0" VerticalAlignment="Top"/>
+        <StackPanel Orientation="Horizontal" Margin="890,183,380,535">
+            <Label DataContext="{Binding JobModel}" Content="{Binding City}" />
+            <Label DataContext="{Binding JobModel}" Content="{Binding State}"/>
+            <Label DataContext="{Binding JobModel}" Content="{Binding ZipCode}"/>
+        </StackPanel>
+        <Rectangle  HorizontalAlignment="Left" Height="67" Margin="890,141,0,0" Stroke="Black" VerticalAlignment="Top" Width="219"/>
         <Rectangle HorizontalAlignment="Left" Height="32" Margin="1264,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="112"/>
         <Rectangle  HorizontalAlignment="Left" Height="32" Margin="889,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="487"/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="1039,251,0,0" VerticalAlignment="Top"/>

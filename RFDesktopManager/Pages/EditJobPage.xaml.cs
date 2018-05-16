@@ -48,12 +48,19 @@ namespace RFDesktopManager.Pages
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
+            //This code is also in the of the jobs page viewmodel
             _viewModel.MaterialsList = RFRepo.GetJobMaterials(_viewModel.JobModel.ID);
             _viewModel.LaborList = RFRepo.GetJobLabors(_viewModel.JobModel.ID);
             foreach (var labor in _viewModel.LaborList)
             {
                 _viewModel.Hours += labor.Hours;
             }
+            var CityLine = new StringBuilder(_viewModel.JobModel.City);
+            CityLine.Append(",");
+            CityLine.Append(_viewModel.JobModel.State);
+            CityLine.Append(" " + _viewModel.JobModel.ZipCode);
+            _viewModel.CityLine = CityLine.ToString();
+            _viewModel.SelectedStatus = RFRepo.GetStatusType(_viewModel.JobModel.StatusID);
         }
     }
 }

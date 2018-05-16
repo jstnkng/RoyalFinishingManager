@@ -62,6 +62,18 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private string _CityLine;
+
+        public string CityLine
+        {
+            get { return _CityLine; }
+            set
+            {
+                _CityLine = value;
+                RaisePropertyChanged("CityLine");
+            }
+        }
+
         public EditJobViewModel()
         {
             JobModel = new Job();
