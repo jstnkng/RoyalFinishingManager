@@ -20,6 +20,8 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class HomePage : UserControl
     {
+        public static int ID = 0;
+
         public HomePage()
         {
             InitializeComponent();
@@ -27,17 +29,17 @@ namespace RFDesktopManager.Pages
 
         private void btnNewJob_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.PageControl.SelectedIndex = 3;
+            MainWindow.PageControl.SelectedIndex = AddJobPage.ID;
         }
 
         private void btnOpenJob_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.PageControl.SelectedIndex = 1;
+            MainWindow.PageControl.SelectedIndex = JobsPage.ID;
         }
 
         private void btnTimeCard_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.PageControl.SelectedIndex = 6;
+            MainWindow.PageControl.SelectedIndex = TimeCardPage.ID;
         }
     }
 }

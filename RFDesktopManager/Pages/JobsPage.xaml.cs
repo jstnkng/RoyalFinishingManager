@@ -22,6 +22,9 @@ namespace RFDesktopManager.Pages
     public partial class JobsPage : UserControl
     {
         public static JobsViewModel _viewModel;
+
+        public static int ID = 1;
+
         public JobsPage()
         {
             InitializeComponent();
@@ -85,6 +88,11 @@ namespace RFDesktopManager.Pages
             chkStatus4.IsChecked = false;
             _viewModel.Refresh(0);
             selectedStatus = 0;
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = HomePage.ID;
         }
     }
 }

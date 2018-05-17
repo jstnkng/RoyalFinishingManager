@@ -23,6 +23,9 @@ namespace RFDesktopManager.Pages
     public partial class EditJobPage : UserControl
     {
         public static EditJobViewModel _viewModel;
+
+        public static int ID = 2;
+
         public EditJobPage()
         {
             InitializeComponent();
@@ -48,6 +51,11 @@ namespace RFDesktopManager.Pages
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {
+            Refresh();
+        }
+
+        public static void Refresh()
+        {
             //This code is also in the of the jobs page viewmodel
             _viewModel.MaterialsList = RFRepo.GetJobMaterials(_viewModel.JobModel.ID);
             _viewModel.LaborList = RFRepo.GetJobLabors(_viewModel.JobModel.ID);
@@ -65,17 +73,18 @@ namespace RFDesktopManager.Pages
 
         private void btnLabor_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.PageControl.SelectedIndex = 5;
+            MainWindow.PageControl.SelectedIndex = AddLaborPage.ID;
         }
 
         private void btnMaterial_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.PageControl.SelectedIndex = 4;
+            MainWindow.PageControl.SelectedIndex = AddMaterialPage.ID;
+            AddMaterialPage._viewModel.SelectedJob = _viewModel.JobModel;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.PageControl.SelectedIndex = 1;
+            MainWindow.PageControl.SelectedIndex = JobsPage.ID;
         }
     }
 }

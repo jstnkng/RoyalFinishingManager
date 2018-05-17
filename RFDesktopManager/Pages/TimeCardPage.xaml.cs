@@ -22,6 +22,9 @@ namespace RFDesktopManager.Pages
     public partial class TimeCardPage : UserControl
     {
         private TimeCardViewModel _viewModel;
+
+        public static int ID = 6;
+
         public TimeCardPage()
         {
             InitializeComponent();
@@ -33,6 +36,11 @@ namespace RFDesktopManager.Pages
         {
             //Window addLaborWindow = new AddLabor(_viewModel.SelectedEmployee.ID);
             //addLaborWindow.Show();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = HomePage.ID;
         }
     }
 }

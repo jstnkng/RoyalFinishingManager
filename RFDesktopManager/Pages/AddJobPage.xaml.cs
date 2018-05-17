@@ -23,6 +23,8 @@ namespace RFDesktopManager.Pages
     {
         private AddJobViewModel _viewModel;
 
+        public static int ID = 3;
+
         public AddJobPage()
         {
             InitializeComponent();
@@ -38,6 +40,11 @@ namespace RFDesktopManager.Pages
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.SaveJob();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = HomePage.ID;
         }
     }
 }

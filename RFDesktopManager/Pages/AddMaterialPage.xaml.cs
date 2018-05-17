@@ -18,7 +18,9 @@ namespace RFDesktopManager.Pages
 {
     public partial class AddMaterialPage : UserControl
     {
-        private AddMaterialViewModel _viewModel;
+        public static AddMaterialViewModel _viewModel;
+
+        public static int ID = 5;
 
         public AddMaterialPage()
         {
@@ -30,6 +32,12 @@ namespace RFDesktopManager.Pages
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.Save();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = EditJobPage.ID;
+            EditJobPage.Refresh();
         }
     }
 }
