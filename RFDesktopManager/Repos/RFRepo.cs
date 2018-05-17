@@ -80,6 +80,12 @@ namespace RFDesktopManager.Repos
             return db.Jobs.FirstOrDefault(x => x.Name == jobName).ID;
         }
 
+        public static Job GetJob(string jobName)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Jobs.FirstOrDefault(x => x.Name == jobName);
+        }
+
         public static List<Employee> GetEmployees()
         {
             var db = new RoyalFinishingDataContext();

@@ -117,6 +117,19 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private string _JobName;
+
+        public string JobName
+        {
+            get { return _JobName; }
+            set
+            {
+                _JobName = value;
+                SelectedJob = RFRepo.GetJob(value);
+                RaisePropertyChanged("JobName");
+            }
+        }
+
         public AddMaterialViewModel()
         {
             EmployeeList = RFRepo.GetEmployees();

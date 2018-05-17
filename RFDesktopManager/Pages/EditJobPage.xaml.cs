@@ -79,7 +79,7 @@ namespace RFDesktopManager.Pages
         private void btnMaterial_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.PageControl.SelectedIndex = AddMaterialPage.ID;
-            AddMaterialPage._viewModel.SelectedJob = _viewModel.JobModel;
+            AddMaterialPage._viewModel.JobName = _viewModel.JobModel.Name;
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
