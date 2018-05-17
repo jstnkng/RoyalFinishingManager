@@ -24,5 +24,20 @@ namespace RFDesktopManager.Pages
         {
             InitializeComponent();
         }
+
+        private void btnNewJob_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = 3;
+        }
+
+        private void btnOpenJob_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = 1;
+        }
+
+        private void btnTimeCard_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = 6;
+        }
     }
 }

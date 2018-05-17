@@ -62,5 +62,20 @@ namespace RFDesktopManager.Pages
             _viewModel.CityLine = CityLine.ToString();
             _viewModel.SelectedStatus = RFRepo.GetStatusType(_viewModel.JobModel.StatusID);
         }
+
+        private void btnLabor_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = 5;
+        }
+
+        private void btnMaterial_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = 4;
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.PageControl.SelectedIndex = 1;
+        }
     }
 }

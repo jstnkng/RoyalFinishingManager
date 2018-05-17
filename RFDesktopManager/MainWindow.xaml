@@ -13,22 +13,22 @@
             <TabItem Name="HomePage" Header="Home">
                 <Pages:HomePage Margin="0,0,11,8"></Pages:HomePage>
             </TabItem>
-            <TabItem Name="JobsPage" Header="Jobs">
+            <TabItem Name="JobsPage" Header="Jobs" Visibility="Hidden">
                 <Pages:JobsPage Margin="10,5,9,0"></Pages:JobsPage>
             </TabItem>
-            <TabItem Name="EditJobsPage" Header="Edit Job">
+            <TabItem Name="EditJobsPage" Header="Edit Job" Visibility="Hidden">
                 <Pages:EditJobPage Margin="10,5,9,0"></Pages:EditJobPage>
             </TabItem>
-            <TabItem Name="AddJobsPage" Header="Add Job">
+            <TabItem Name="AddJobsPage" Header="Add Job" Visibility="Hidden">
                 <Pages:AddJobPage Margin="10,5,9,0"></Pages:AddJobPage>
             </TabItem>
-            <TabItem Name="AddLaborPage" Header="Add Labor">
+            <TabItem Name="AddLaborPage" Header="Add Labor" Visibility="Hidden">
                 <Pages:AddLaborPage Margin="10,5,9,0"></Pages:AddLaborPage>
             </TabItem>
-            <TabItem Name="AddMaterialPage" Header="Add Material">
+            <TabItem Name="AddMaterialPage" Header="Add Material" Visibility="Hidden">
                 <Pages:AddMaterialPage Margin="10,5,9,0"></Pages:AddMaterialPage>
             </TabItem>
-            <TabItem Name="TimeCardPage" Header="Time Cards">
+            <TabItem Name="TimeCardPage" Header="Time Cards" Visibility="Hidden">
                 <Pages:TimeCardPage Margin="10,5,9,0"></Pages:TimeCardPage>
             </TabItem>
         </TabControl>

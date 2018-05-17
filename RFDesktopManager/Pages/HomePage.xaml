@@ -4,10 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:RFDesktopManager.Pages"
-      mc:Ignorable="d" Height="750" Width="1500" >
+      mc:Ignorable="d" Height="800" Width="1550" >
     <Grid>
         <Label FontSize="50" Content="Royal Finishing Manager" HorizontalAlignment="Left" Margin="491,46,0,0" VerticalAlignment="Top" Height="83" Width="560"/>
-        <Label Content="Getting it Done since 2001" FontSize="30" HorizontalAlignment="Left" Margin="576,342,0,0" VerticalAlignment="Top"/>
+        <Label Content="Getting it Done since 2001" FontSize="30" HorizontalAlignment="Left" Margin="567,632,0,0" VerticalAlignment="Top"/>
+        <Button Name="btnNewJob" Content="New Job" HorizontalAlignment="Left" Margin="641,207,0,0" VerticalAlignment="Top" Width="209" Height="54" Click="btnNewJob_Click"/>
+        <Button Name="btnOpenJob" Content="Open Job" HorizontalAlignment="Left" Margin="631,320,0,0" VerticalAlignment="Top" Width="209" Height="54" Click="btnOpenJob_Click"/>
+        <Button Name="btnTimeCard" Content="Time Cards" HorizontalAlignment="Left" Margin="631,425,0,0" VerticalAlignment="Top" Width="209" Height="54" Click="btnTimeCard_Click"/>
 
     </Grid>
 </UserControl>

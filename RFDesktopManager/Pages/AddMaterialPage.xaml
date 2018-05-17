@@ -6,8 +6,8 @@
              xmlns:local="clr-namespace:RFDesktopManager.Pages"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
              mc:Ignorable="d" 
-             Height="750" Width="1500">
-    <Grid Margin="0,0,2,3">
+             Height="800" Width="1550">
+    <Grid Margin="48,30,11,6">
         <Label Content="Item:" HorizontalAlignment="Left" Margin="562,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.897,1.25"/>
         <ComboBox ItemsSource="{Binding MaterialList}" DisplayMemberPath="Item" Text="{Binding NewMaterial}" SelectedItem="{Binding SelectedMaterial}" HorizontalAlignment="Left" Margin="562,39,0,0" VerticalAlignment="Top" Width="205" IsEditable="True"/>
         <Label Content="Price/Item:" HorizontalAlignment="Left" Margin="185,107,0,0" VerticalAlignment="Top"/>

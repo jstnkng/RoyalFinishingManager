@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:RFDesktopManager.Pages"
              mc:Ignorable="d" 
-             Height="750" Width="1500">
-    <Grid Margin="0,0,11,6">
+             Height="800" Width="1550">
+    <Grid Margin="48,30,11,6">
         <Label Content="Job Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox DataContext="{Binding JobModel}" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="81,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="384"/>
         <Label Content="Job Description:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
@@ -25,7 +25,7 @@
             </ListView.View>
         </ListView>
         <Label Content="Total hours:" HorizontalAlignment="Left" Margin="246,658,0,0" VerticalAlignment="Top"/>
-        <Button Name="btnInvoice" Content="Print invoice" HorizontalAlignment="Left" Margin="643,678,0,0" VerticalAlignment="Top" Width="135"  Height="43"/>
+        <Button Name="btnInvoice" Content="Print invoice" HorizontalAlignment="Left" Margin="1080,727,0,-8" VerticalAlignment="Top" Width="136"  Height="25"/>
         <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="290,705,0,0" VerticalAlignment="Top" Width="105" Height="29" Click="btnSave_Click" />
         <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="456,204,0,0" VerticalAlignment="Top" Width="76" Click="btnDirections_Click" Height="23" />
         <Label Content="Materials:" HorizontalAlignment="Left" Margin="389,251,0,0" VerticalAlignment="Top" Height="26" Width="76"/>
@@ -47,7 +47,7 @@
         <TextBox DataContext="{Binding JobModel}" Text="{Binding City}" HorizontalAlignment="Left" Height="23" Margin="537,166,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="195"/>
         <TextBox DataContext="{Binding JobModel}" Text="{Binding State}" HorizontalAlignment="Left" Height="23" Margin="71,201,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="118"/>
         <TextBox DataContext="{Binding JobModel}" Text="{Binding ZipCode}" HorizontalAlignment="Left" Height="23" Margin="291,201,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="119"/>
-        <Button Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="669,227,0,0" VerticalAlignment="Top" Width="75" Click="btnRefresh_Click"/>
+        <Button Name="btnRefresh" Content="Refresh" HorizontalAlignment="Left" Margin="1399,20,0,0" VerticalAlignment="Top" Width="76" Click="btnRefresh_Click"/>
         <Label Content="{Binding Hours}" HorizontalAlignment="Left" Margin="317,658,0,0" VerticalAlignment="Top"/>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="693" Margin="862,17,0,0" Stroke="Black" VerticalAlignment="Top" Width="532">
 
@@ -81,6 +81,9 @@
         <Label Content="Total:   $" HorizontalAlignment="Left" Margin="1248,673,0,0" VerticalAlignment="Top"/>
         <Label Content="123.00" HorizontalAlignment="Left" Margin="1293,673,0,0" VerticalAlignment="Top"/>
         <Label Content="(712)-470-4330" FontStyle="Oblique" HorizontalAlignment="Left" Margin="885,84,0,0" VerticalAlignment="Top"/>
+        <Button Content="Add Labor" HorizontalAlignment="Left" Margin="239,251,0,0" VerticalAlignment="Top" Width="91" Height="26" Name="btnLabor" Click="btnLabor_Click"/>
+        <Button Name="btnMaterial" Content="Add Material" HorizontalAlignment="Left" Margin="643,247,0,0" VerticalAlignment="Top" Width="101" Height="27" Click="btnMaterial_Click"/>
+        <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="-48,-30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
 
     </Grid>
 </UserControl>
