@@ -29,6 +29,8 @@ namespace RFDesktopManager.Repos
             job.Description = currentJob.Description;
             job.Name = currentJob.Name;
             job.StatusID = currentJob.StatusID;
+            job.SqFt = currentJob.SqFt;
+            job.SqFtRate = currentJob.SqFtRate;
             db.SubmitChanges();
             MessageBox.Show("Job saved");
         }

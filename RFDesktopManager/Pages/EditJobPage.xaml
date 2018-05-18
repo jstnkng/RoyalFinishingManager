@@ -10,7 +10,7 @@
         <Label Content="Job Name:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <TextBox DataContext="{Binding JobModel}" Text="{Binding Name}" HorizontalAlignment="Left" Height="23" Margin="81,14,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="384"/>
         <Label Content="Job Description:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="640" Margin="10,82,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="46" TextWrapping="Wrap" DataContext="{Binding JobModel}" Text="{Binding Description}" VerticalAlignment="Top" Width="476" Margin="10,82,0,0"/>
         <Label Content="Address:
                " HorizontalAlignment="Left" Margin="5,166,0,0" VerticalAlignment="Top" Height="30" Width="66"/>
         <TextBox DataContext="{Binding JobModel}" HorizontalAlignment="Left" Height="23" Margin="71,166,0,0" TextWrapping="Wrap" Text="{Binding Address}" VerticalAlignment="Top" Width="394"/>
@@ -84,6 +84,10 @@
         <Button Content="Add Labor" HorizontalAlignment="Left" Margin="239,251,0,0" VerticalAlignment="Top" Width="91" Height="26" Name="btnLabor" Click="btnLabor_Click"/>
         <Button Name="btnMaterial" Content="Add Material" HorizontalAlignment="Left" Margin="643,247,0,0" VerticalAlignment="Top" Width="101" Height="27" Click="btnMaterial_Click"/>
         <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="-48,-30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
+        <Label Content="Total sq. ft:" HorizontalAlignment="Left" Margin="537,72,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="624,70,0,0" TextWrapping="Wrap" Text="{Binding SqFt}" DataContext="{Binding JobModel}" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Rate:" HorizontalAlignment="Left" Margin="620,102,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="661,103,0,0" TextWrapping="Wrap" Text="{Binding SqFtRate}" DataContext="{Binding JobModel}" VerticalAlignment="Top" Width="83"/>
 
     </Grid>
 </UserControl>

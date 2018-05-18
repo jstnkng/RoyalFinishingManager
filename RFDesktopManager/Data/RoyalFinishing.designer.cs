@@ -51,7 +51,7 @@ namespace RFDesktopManager.Data
         #endregion
 
         public RoyalFinishingDataContext() :
-                base(global::RFDesktopManager.Properties.Settings.Default.RoyalFinishingDBConnectionString1, mappingSource)
+                base(global::RFDesktopManager.Properties.Settings.Default.RoyalFinishingDBConnectionString, mappingSource)
         {
             OnCreated();
         }
@@ -309,6 +309,10 @@ namespace RFDesktopManager.Data
 
         private int _StatusID;
 
+        private decimal _SqFt;
+
+        private decimal _SqFtRate;
+
         #region Extensibility Method Definitions
         partial void OnLoaded();
         partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -329,6 +333,10 @@ namespace RFDesktopManager.Data
         partial void OnDescriptionChanged();
         partial void OnStatusIDChanging(int value);
         partial void OnStatusIDChanged();
+        partial void OnSqFtChanging(decimal value);
+        partial void OnSqFtChanged();
+        partial void OnSqFtRateChanging(decimal value);
+        partial void OnSqFtRateChanged();
         #endregion
 
         public Job()
@@ -491,6 +499,46 @@ namespace RFDesktopManager.Data
                     this.SendPropertyChanging();
                     this._StatusID = value;
                     this.SendPropertyChanged("StatusID");
+                    this.OnStatusIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SqFt", DbType = "Decimal(7,2)")]
+        public decimal SqFt
+        {
+            get
+            {
+                return this._SqFt;
+            }
+            set
+            {
+                if ((this._SqFt != value))
+                {
+                    this.OnSqFtChanging(value);
+                    this.SendPropertyChanging();
+                    this._SqFt = value;
+                    this.SendPropertyChanged("SqFt");
+                    this.OnStatusIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SqFtRate", DbType = "Decimal(4,2)")]
+        public decimal SqFtRate
+        {
+            get
+            {
+                return this._SqFtRate;
+            }
+            set
+            {
+                if ((this._SqFtRate != value))
+                {
+                    this.OnSqFtRateChanging(value);
+                    this.SendPropertyChanging();
+                    this._SqFtRate = value;
+                    this.SendPropertyChanged("SqFtRate");
                     this.OnStatusIDChanged();
                 }
             }

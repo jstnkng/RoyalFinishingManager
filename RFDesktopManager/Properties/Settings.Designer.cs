@@ -27,23 +27,10 @@ namespace RFDesktopManager.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=royalfinishingdata.ck96xcdzz01e.us-east-2.rds.amazonaws.com;Initial C" +
-            "atalog=RoyalFinishingDB;User ID=admin;Password=royal2001;Connect Timeout=30;Encr" +
-            "ypt=False;TrustServerCertificate=True")]
+            "atalog=RoyalFinishingDB;User ID=admin;Password=royal2001")]
         public string RoyalFinishingDBConnectionString {
             get {
                 return ((string)(this["RoyalFinishingDBConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=royalfinishingdata.ck96xcdzz01e.us-east-2.rds.amazonaws.com;Initial C" +
-            "atalog=RoyalFinishingDB;Persist Security Info=True;User ID=admin;Password=royal2" +
-            "001;User Instance=False")]
-        public string RoyalFinishingDBConnectionString1 {
-            get {
-                return ((string)(this["RoyalFinishingDBConnectionString1"]));
             }
         }
     }
