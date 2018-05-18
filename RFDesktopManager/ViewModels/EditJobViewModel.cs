@@ -21,8 +21,11 @@ namespace RFDesktopManager.ViewModels
             get { return jobModel; }
             set
             {
-                jobModel = value;
-                RaisePropertyChanged("JobModel");
+                if (value != null){ 
+                    jobModel = value;
+                    RaisePropertyChanged("JobModel");
+                    Refresh();
+                }
             }
         }
 
@@ -74,6 +77,30 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private string _InvoiceItems;
+
+        public string InvoiceItems
+        {
+            get { return _InvoiceItems; }
+            set
+            {
+                _InvoiceItems = value;
+                RaisePropertyChanged("InvoiceItems");
+            }
+        }
+
+        private string _InvoiceCosts;
+
+        public string InvoiceCosts
+        {
+            get { return _InvoiceCosts; }
+            set
+            {
+                _InvoiceCosts = value;
+                RaisePropertyChanged("InvoiceCosts");
+            }
+        }
+
         public EditJobViewModel()
         {
             JobModel = new Job();
@@ -107,6 +134,88 @@ namespace RFDesktopManager.ViewModels
                 _SelectedStatus = value;
                 JobModel.StatusID = RFRepo.GetStatusID(SelectedStatus);
                 RaisePropertyChanged("SelectedStatus");
+            }
+        }
+
+        private decimal? _HourlyCost;
+
+        public decimal? HourlyCost
+        {
+            get { return _HourlyCost; }
+            set
+            {
+                _HourlyCost = Math.Round(value.Value,2);
+                RaisePropertyChanged("HourlyCost");
+            }
+        }
+
+        private decimal? _SqFtCost;
+
+        public decimal? SqFtCost
+        {
+            get { return _SqFtCost; }
+            set
+            {
+                if (value.HasValue)
+                _SqFtCost = Math.Round(value.Value, 2);
+                RaisePropertyChanged("SqftCost");
+            }
+        }
+
+        private decimal _TotalCost;
+
+        public decimal TotalCost
+        {
+            get { return _TotalCost; }
+            set
+            {
+                _TotalCost = Math.Round(value, 2);
+                RaisePropertyChanged("TotalCost");
+            }
+        }
+
+        public void Refresh()
+        {
+            InvoiceCosts = "";
+            InvoiceItems = "";
+            Hours = 0;
+            LaborList = RFRepo.GetJobLabors(jobModel.ID);
+            HourlyCost = 0;
+            foreach (var labor in LaborList)
+            {
+                Hours += labor.Hours;
+                var employeeRate = RFRepo.GetEmployeeRate(labor.EmployeeName);
+                HourlyCost += labor.Hours * employeeRate;
+            }
+            if (LaborList.Count > 0)
+            {
+                InvoiceItems += "Labor: " + Hours + " hours\n\n";
+                InvoiceCosts +=  "$" + HourlyCost.ToString() + "\n\n";
+            }
+            SqFtCost = jobModel.SqFt * jobModel.SqFtRate;
+            MaterialsList = RFRepo.GetJobMaterials(jobModel.ID);
+            decimal invoiceMaterialsCost = 0;
+            foreach (var material in MaterialsList)
+            {
+                InvoiceItems += material.MaterialName + "\t Qty: " + material.Quantity + "\n";
+                var totalMaterialCost = material.Cost * material.Quantity;
+                InvoiceCosts += "$" + totalMaterialCost + "\n";
+                invoiceMaterialsCost += totalMaterialCost;
+                if (!(string.IsNullOrEmpty(material.Description)))
+                {
+                    InvoiceItems += "\t Description: " + material.Description + "\n";
+                    InvoiceCosts += "\n";
+                }
+            }
+            TotalCost = HourlyCost.Value + invoiceMaterialsCost;
+            var cityString = new StringBuilder(jobModel.City);
+            cityString.Append(",");
+            cityString.Append(jobModel.State);
+            cityString.Append(" " + jobModel.ZipCode);
+            CityLine = cityString.ToString();
+            if (SelectedStatus != null)
+            {
+                SelectedStatus = RFRepo.GetStatusType(jobModel.StatusID);
             }
         }
 

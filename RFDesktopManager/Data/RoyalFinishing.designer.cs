@@ -309,9 +309,9 @@ namespace RFDesktopManager.Data
 
         private int _StatusID;
 
-        private decimal _SqFt;
+        private decimal? _SqFt;
 
-        private decimal _SqFtRate;
+        private decimal? _SqFtRate;
 
         #region Extensibility Method Definitions
         partial void OnLoaded();
@@ -333,9 +333,9 @@ namespace RFDesktopManager.Data
         partial void OnDescriptionChanged();
         partial void OnStatusIDChanging(int value);
         partial void OnStatusIDChanged();
-        partial void OnSqFtChanging(decimal value);
+        partial void OnSqFtChanging(decimal? value);
         partial void OnSqFtChanged();
-        partial void OnSqFtRateChanging(decimal value);
+        partial void OnSqFtRateChanging(decimal? value);
         partial void OnSqFtRateChanged();
         #endregion
 
@@ -504,8 +504,8 @@ namespace RFDesktopManager.Data
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SqFt", DbType = "Decimal(7,2)")]
-        public decimal SqFt
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SqFt", DbType = "Decimal(7,2)", CanBeNull= true)]
+        public decimal? SqFt
         {
             get
             {
@@ -524,8 +524,8 @@ namespace RFDesktopManager.Data
             }
         }
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SqFtRate", DbType = "Decimal(4,2)")]
-        public decimal SqFtRate
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_SqFtRate", DbType = "Decimal(4,2)", CanBeNull= true)]
+        public decimal? SqFtRate
         {
             get
             {

@@ -38,22 +38,9 @@ namespace RFDesktopManager.ViewModels
             {
                 if (value != null)
                 {
-
-                    //This code is also in the refresh button click of the edit job page
                     MainWindow.PageControl.SelectedIndex = 2;
                     EditJobPage._viewModel.JobModel = value;
-                    EditJobPage._viewModel.LaborList = RFRepo.GetJobLabors(value.ID);
-                    foreach (var labor in EditJobPage._viewModel.LaborList)
-                    {
-                        EditJobPage._viewModel.Hours += labor.Hours;
-                    }
-                    EditJobPage._viewModel.MaterialsList = RFRepo.GetJobMaterials(value.ID);
-                    var CityLine = new StringBuilder(value.City);
-                    CityLine.Append(",");
-                    CityLine.Append(value.State);
-                    CityLine.Append(" " + value.ZipCode);
-                    EditJobPage._viewModel.CityLine = CityLine.ToString();
-                    EditJobPage._viewModel.SelectedStatus = RFRepo.GetStatusType(value.StatusID);
+                    EditJobPage._viewModel.SelectedStatus = RFRepo.GetStatusType(EditJobPage._viewModel.JobModel.StatusID);
                 }
                 _selectedJob = value;
             }

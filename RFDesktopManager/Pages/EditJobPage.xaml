@@ -26,7 +26,7 @@
         </ListView>
         <Label Content="Total hours:" HorizontalAlignment="Left" Margin="246,658,0,0" VerticalAlignment="Top"/>
         <Button Name="btnInvoice" Content="Print invoice" HorizontalAlignment="Left" Margin="1080,727,0,-8" VerticalAlignment="Top" Width="136"  Height="25"/>
-        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="290,705,0,0" VerticalAlignment="Top" Width="105" Height="29" Click="btnSave_Click" />
+        <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="456,702,0,0" VerticalAlignment="Top" Width="105" Height="29" Click="btnSave_Click" />
         <Button Name="btnDirections" Content="Directions" HorizontalAlignment="Left" Margin="456,204,0,0" VerticalAlignment="Top" Width="76" Click="btnDirections_Click" Height="23" />
         <Label Content="Materials:" HorizontalAlignment="Left" Margin="389,251,0,0" VerticalAlignment="Top" Height="26" Width="76"/>
         <ListView ItemsSource="{Binding MaterialsList}" HorizontalAlignment="Left" Height="376" Margin="389,282,0,0" VerticalAlignment="Top" Width="355" SelectionChanged="ListView_SelectionChanged">
@@ -74,20 +74,25 @@
         <Rectangle  HorizontalAlignment="Left" Height="32" Margin="889,247,0,0" Stroke="Black" VerticalAlignment="Top" Width="487"/>
         <Label Content="Description" HorizontalAlignment="Left" Margin="1039,251,0,0" VerticalAlignment="Top"/>
         <Label Content="Amount" HorizontalAlignment="Left" Margin="1302,251,0,0" VerticalAlignment="Top"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="890,279,0,0" VerticalAlignment="Top" BorderThickness=" 1" BorderBrush="Black" Height="389" Width="374">
+        <Label Content="{Binding InvoiceItems}" HorizontalAlignment="Left" Margin="890,279,0,0" VerticalAlignment="Top" BorderThickness=" 1" BorderBrush="Black" Height="389" Width="374">
         </Label>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="1264,279,0,0" VerticalAlignment="Top" BorderThickness=" 1" BorderBrush="Black" Height="389" Width="112"/>
+        <Label Content="{Binding InvoiceCosts}" HorizontalAlignment="Left" Margin="1264,279,0,0" VerticalAlignment="Top" BorderThickness=" 1" BorderBrush="Black" Height="389" Width="112"/>
         <Label FontSize="11" Content="Thank you for your business. It is very much appreciated!" HorizontalAlignment="Left" Margin="890,678,0,0" VerticalAlignment="Top"/>
         <Label Content="Total:   $" HorizontalAlignment="Left" Margin="1248,673,0,0" VerticalAlignment="Top"/>
-        <Label Content="123.00" HorizontalAlignment="Left" Margin="1293,673,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding TotalCost}" HorizontalAlignment="Left" Margin="1293,673,0,0" VerticalAlignment="Top"/>
         <Label Content="(712)-470-4330" FontStyle="Oblique" HorizontalAlignment="Left" Margin="885,84,0,0" VerticalAlignment="Top"/>
         <Button Content="Add Labor" HorizontalAlignment="Left" Margin="239,251,0,0" VerticalAlignment="Top" Width="91" Height="26" Name="btnLabor" Click="btnLabor_Click"/>
         <Button Name="btnMaterial" Content="Add Material" HorizontalAlignment="Left" Margin="643,247,0,0" VerticalAlignment="Top" Width="101" Height="27" Click="btnMaterial_Click"/>
         <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="-48,-30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
         <Label Content="Total sq. ft:" HorizontalAlignment="Left" Margin="537,72,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="624,70,0,0" TextWrapping="Wrap" Text="{Binding SqFt}" DataContext="{Binding JobModel}" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Rate:" HorizontalAlignment="Left" Margin="620,102,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rate/ sq.ft : $" HorizontalAlignment="Left" Margin="583,102,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="661,103,0,0" TextWrapping="Wrap" Text="{Binding SqFtRate}" DataContext="{Binding JobModel}" VerticalAlignment="Top" Width="83"/>
+        <Label Content="{Binding HourlyCost}" HorizontalAlignment="Left" Margin="90,716,0,0" VerticalAlignment="Top"/>
+        <Label Content="Hourly total: $" HorizontalAlignment="Left" Margin="11,716,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sq. ft total: $" HorizontalAlignment="Left" Margin="156,716,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding SqFtCost}" HorizontalAlignment="Left" Margin="238,716,0,0" VerticalAlignment="Top"/>
+        <Label Content="Due:" HorizontalAlignment="Left" Margin="1260,163,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>
