@@ -9,7 +9,7 @@
         <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="-48,-30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
         <Label HorizontalAlignment="Left" Margin="30,39,0,0" VerticalAlignment="Top"/>
         <Grid>
-            <ListView Margin="109,70,198,92" Name="listJobs"  ItemsSource="{Binding JobsList}" SelectedItem="{Binding SelectedJob}">
+            <ListView Margin="109,70,198,92" Name="listJobs"  ItemsSource="{Binding JobsList}" SelectedItem="{Binding SelectedJob}" SelectionChanged="listJobs_SelectionChanged">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
@@ -23,7 +23,7 @@
             <Button Content="Refresh" HorizontalAlignment="Left" Margin="1335,25,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
         </Grid>
         <Label Content="Sort by:" HorizontalAlignment="Left" Margin="1036,10,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="1091,13,0,0" VerticalAlignment="Top" Width="166">
+        <ComboBox HorizontalAlignment="Left" SelectedItem="{Binding SelectedSort}"  Margin="1091,13,0,0" VerticalAlignment="Top" Width="166">
             <ComboBoxItem Content="Name"/>
             <ComboBoxItem Content="Date (Newest - oldest)"/>
             <ComboBoxItem Content="Date (Oldest - newest)"/>
@@ -35,7 +35,7 @@
         <CheckBox Name="chkStatus4" Content="Completed" HorizontalAlignment="Left" Margin="296,49,0,0" VerticalAlignment="Top" Checked="chkStatus4_Checked"/>
         <CheckBox Name="chkStatus1" Content="Pending" HorizontalAlignment="Left" Margin="405,49,0,0" VerticalAlignment="Top" Checked="chkStatus1_Checked"/>
         <Label Content="Search:" HorizontalAlignment="Left" Margin="222,10,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="279,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="359"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="279,13,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="359" Name="txtSearch" TextChanged="txtSearch_TextChanged"  />
 
     </Grid>
 </UserControl>

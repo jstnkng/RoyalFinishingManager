@@ -33,11 +33,9 @@ namespace RFDesktopManager.Pages
         }
 
 
-        public static int selectedStatus = 0;
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _viewModel.Refresh(selectedStatus);
+            _viewModel.Refresh();
         }
 
         private void chkStatus1_Checked(object sender, RoutedEventArgs e)
@@ -46,8 +44,8 @@ namespace RFDesktopManager.Pages
             chkStatus2.IsChecked = false;
             chkStatus3.IsChecked = false;
             chkStatus4.IsChecked = false;
-            _viewModel.Refresh(1);
-            selectedStatus = 1;
+            _viewModel.SelectedStatus = 1;
+            _viewModel.Refresh();
         }
 
         private void chkStatus4_Checked(object sender, RoutedEventArgs e)
@@ -56,8 +54,8 @@ namespace RFDesktopManager.Pages
             chkStatus2.IsChecked = false;
             chkStatus3.IsChecked = false;
             chkStatus1.IsChecked = false;
-            _viewModel.Refresh(4);
-            selectedStatus = 4;
+            _viewModel.SelectedStatus = 4;
+            _viewModel.Refresh();
         }
 
         private void chkStatus3_Checked(object sender, RoutedEventArgs e)
@@ -66,8 +64,8 @@ namespace RFDesktopManager.Pages
             chkStatus2.IsChecked = false;
             chkStatus1.IsChecked = false;
             chkStatus4.IsChecked = false;
-            _viewModel.Refresh(3);
-            selectedStatus = 3;
+            _viewModel.SelectedStatus = 3;
+            _viewModel.Refresh();
         }
 
         private void chkStatus2_Checked(object sender, RoutedEventArgs e)
@@ -76,8 +74,8 @@ namespace RFDesktopManager.Pages
             chkStatus1.IsChecked = false;
             chkStatus3.IsChecked = false;
             chkStatus4.IsChecked = false;
-            _viewModel.Refresh(2);
-            selectedStatus = 2;
+            _viewModel.SelectedStatus = 2;
+            _viewModel.Refresh();
         }
 
         private void chkStatus0_Checked(object sender, RoutedEventArgs e)
@@ -86,13 +84,31 @@ namespace RFDesktopManager.Pages
             chkStatus2.IsChecked = false;
             chkStatus3.IsChecked = false;
             chkStatus4.IsChecked = false;
-            _viewModel.Refresh(0);
-            selectedStatus = 0;
+            _viewModel.SelectedStatus = 0;
+            _viewModel.Refresh();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.PageControl.SelectedIndex = HomePage.ID;
+
+        }
+
+        private void listJobs_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            listJobs.UnselectAll();
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtSearch.Text))
+            {
+                _viewModel.Refresh();
+            }
+            else
+            {
+                _viewModel.Search(txtSearch.Text);
+            }
         }
     }
 }

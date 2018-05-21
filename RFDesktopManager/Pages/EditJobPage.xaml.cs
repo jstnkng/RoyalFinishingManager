@@ -74,6 +74,7 @@ namespace RFDesktopManager.Pages
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.PageControl.SelectedIndex = JobsPage.ID;
+            JobsPage._viewModel.Refresh();
         }
     }
 }

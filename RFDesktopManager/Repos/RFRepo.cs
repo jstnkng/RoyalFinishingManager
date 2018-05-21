@@ -88,6 +88,41 @@ namespace RFDesktopManager.Repos
             return db.Jobs.FirstOrDefault(x => x.Name == jobName);
         }
 
+        public static List<Job> SearchForJobs(string text, int statusID)
+        {
+            var db = new RoyalFinishingDataContext();
+            var searchList = new List<Job>();
+            var descriptionList = db.Jobs.Where(x => x.Description.Contains(text) && x.StatusID == statusID);
+            var nameList = db.Jobs.Where(x => x.Name.Contains(text) && x.StatusID == statusID);
+            foreach (var job in descriptionList)
+            {
+                searchList.Add(job);
+            }
+            foreach (var job in nameList)
+            {
+                if (!(searchList.Contains(job)))
+                searchList.Add(job);
+            }
+            return searchList;
+        }
+
+
+        public static List<Job> SortJobsByName(int statusID)
+        {
+            var db = new RoyalFinishingDataContext();
+            if (statusID == 0)
+                return db.Jobs.OrderBy(x => x.Name).ToList();
+            else return db.Jobs.Where(x => x.StatusID == statusID).OrderBy(x => x.Name).ToList();           
+        }
+
+        public static List<Job> SortJobsByCity(int statusID)
+        {
+            var db = new RoyalFinishingDataContext();
+            if (statusID == 0)
+                return db.Jobs.OrderBy(x => x.City).ToList();
+            else return db.Jobs.Where(x => x.StatusID == statusID).OrderBy(x => x.City).ToList();
+        }
+
         public static List<Employee> GetEmployees()
         {
             var db = new RoyalFinishingDataContext();

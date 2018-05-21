@@ -35,6 +35,7 @@ namespace RFDesktopManager.Pages
         private void btnOpenJob_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.PageControl.SelectedIndex = JobsPage.ID;
+            JobsPage._viewModel.Refresh();
         }
 
         private void btnTimeCard_Click(object sender, RoutedEventArgs e)

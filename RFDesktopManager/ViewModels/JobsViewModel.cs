@@ -46,15 +46,56 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        public int SelectedStatus { get; set; }
+
         public JobsViewModel()
         {
             _JobsList = RFRepo.GetJobs(0);
             RaisePropertyChanged("JobsList");
+            SelectedSort = "";
         }
 
-        public void Refresh(int status)
+        public void Refresh()
         {
-            JobsList = RFRepo.GetJobs(status);
+            if (SelectedSort.Contains("Name")) SortByName();
+            else if (SelectedSort.Contains("City")) SortByCity();
+            else
+            {
+                _JobsList = RFRepo.GetJobs(SelectedStatus);
+                RaisePropertyChanged("JobsList");
+            }
+        }
+
+        public void Search(string text)
+        {
+            JobsList.Clear();
+            RaisePropertyChanged("JobsList");
+            JobsList = RFRepo.SearchForJobs(text, SelectedStatus);
+            RaisePropertyChanged("JobsList");
+        }
+
+        private string _SelectedSort;
+
+        public string SelectedSort
+        {
+            get { return _SelectedSort; }
+            set
+            {
+                _SelectedSort = value;
+                RaisePropertyChanged("SelectedSort");
+                Refresh();
+            }
+        }
+
+        public void SortByName()
+        {
+            JobsList = RFRepo.SortJobsByName(SelectedStatus);
+            RaisePropertyChanged("JobsList");
+        }
+
+        public void SortByCity()
+        {
+            JobsList = RFRepo.SortJobsByCity(SelectedStatus);
             RaisePropertyChanged("JobsList");
         }
 
