@@ -21,11 +21,8 @@ namespace RFDesktopManager.ViewModels
             get { return jobModel; }
             set
             {
-                if (value != null){ 
                     jobModel = value;
                     RaisePropertyChanged("JobModel");
-                    Refresh();
-                }
             }
         }
 
@@ -103,7 +100,6 @@ namespace RFDesktopManager.ViewModels
 
         public EditJobViewModel()
         {
-            JobModel = new Job();
             StatusList = RFRepo.GetJobStatusList();
         }
 
@@ -174,8 +170,9 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
-        public void Refresh()
+        public void Refresh(int jobID)
         {
+            JobModel = RFRepo.GetJob(jobID);
             InvoiceCosts = "";
             InvoiceItems = "";
             Hours = 0;
@@ -187,12 +184,23 @@ namespace RFDesktopManager.ViewModels
                 var employeeRate = RFRepo.GetEmployeeRate(labor.EmployeeName);
                 HourlyCost += labor.Hours * employeeRate;
             }
+            RaisePropertyChanged("HourlyCost");
             if (LaborList.Count > 0)
             {
-                InvoiceItems += "Labor: " + Hours + " hours\n\n";
-                InvoiceCosts +=  "$" + HourlyCost.ToString() + "\n\n";
+                if (JobModel.BillByHour)
+                {
+                    InvoiceItems += "Labor: " + Hours + " hours\n\n";
+                    InvoiceCosts += "$" + HourlyCost.ToString() + "\n\n";
+                }
+                else if (JobModel.BillBySqFt)
+                {
+                    InvoiceItems += JobModel.SqFt + " total square ft at $" + JobModel.SqFtRate + "/ sq ft\n\n";
+                    InvoiceCosts += "$" + SqFtCost.ToString()  + "\n\n";
+                }
+                
             }
             SqFtCost = jobModel.SqFt * jobModel.SqFtRate;
+            RaisePropertyChanged("SqFtCost");
             MaterialsList = RFRepo.GetJobMaterials(jobModel.ID);
             decimal invoiceMaterialsCost = 0;
             foreach (var material in MaterialsList)
@@ -217,6 +225,7 @@ namespace RFDesktopManager.ViewModels
             {
                 SelectedStatus = RFRepo.GetStatusType(jobModel.StatusID);
             }
+
         }
 
         public List<string> StatusList { get; set; }

@@ -313,6 +313,14 @@ namespace RFDesktopManager.Data
 
         private decimal? _SqFtRate;
 
+        private bool _BillBySqFt;
+
+        private bool _BillByHour;
+
+        private DateTime? _StartDate;
+
+        private DateTime? _EndDate;
+
         #region Extensibility Method Definitions
         partial void OnLoaded();
         partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -337,6 +345,14 @@ namespace RFDesktopManager.Data
         partial void OnSqFtChanged();
         partial void OnSqFtRateChanging(decimal? value);
         partial void OnSqFtRateChanged();
+        partial void OnBillBySqFtChanged();
+        partial void OnBillBySqFtChanging(bool value);
+        partial void OnBillByHourChanged();
+        partial void OnBillByHourChanging(bool value);
+        partial void OnStartDateChanged();
+        partial void OnStartDateChanging(DateTime value);
+        partial void OnEndDateChanged();
+        partial void OnEndDateChanging(DateTime value);
         #endregion
 
         public Job()
@@ -540,6 +556,86 @@ namespace RFDesktopManager.Data
                     this._SqFtRate = value;
                     this.SendPropertyChanged("SqFtRate");
                     this.OnStatusIDChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_BillBySqFt", DbType = "Bit NOT NULL")]
+        public bool BillBySqFt
+        {
+            get
+            {
+                return this._BillBySqFt;
+            }
+            set
+            {
+                if ((this._BillBySqFt != value))
+                {
+                    this.OnBillBySqFtChanging(value);
+                    this.SendPropertyChanging();
+                    this._BillBySqFt = value;
+                    this.SendPropertyChanged("BillBySqFt");
+                    this.OnBillBySqFtChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_BillByHour", DbType = "Bit NOT NULL")]
+        public bool BillByHour
+        {
+            get
+            {
+                return this._BillByHour;
+            }
+            set
+            {
+                if ((this._BillByHour != value))
+                {
+                    this.OnBillByHourChanging(value);
+                    this.SendPropertyChanging();
+                    this._BillByHour = value;
+                    this.SendPropertyChanged("BillByHour");
+                    this.OnBillByHourChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_StartDate", DbType = "Date", CanBeNull = true)]
+        public DateTime? StartDate
+        {
+            get
+            {
+                return this._StartDate;
+            }
+            set
+            {
+                if ((this._StartDate != value))
+                {
+                    this.OnStartDateChanging(value.Value);
+                    this.SendPropertyChanging();
+                    this._StartDate = value;
+                    this.SendPropertyChanged("StartDate");
+                    this.OnStartDateChanged();
+                }
+            }
+        }
+
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage = "_EndDate", DbType = "Date", CanBeNull = true)]
+        public DateTime? EndDate
+        {
+            get
+            {
+                return this._EndDate;
+            }
+            set
+            {
+                if ((this._EndDate != value))
+                {
+                    this.OnEndDateChanging(value.Value);
+                    this.SendPropertyChanging();
+                    this._EndDate = value;
+                    this.SendPropertyChanged("EndDate");
+                    this.OnEndDateChanged();
                 }
             }
         }

@@ -31,6 +31,10 @@ namespace RFDesktopManager.Repos
             job.StatusID = currentJob.StatusID;
             job.SqFt = currentJob.SqFt;
             job.SqFtRate = currentJob.SqFtRate;
+            job.BillByHour = currentJob.BillByHour;
+            job.BillBySqFt = currentJob.BillBySqFt;
+            job.StartDate = currentJob.StartDate;
+            job.EndDate = currentJob.EndDate;
             db.SubmitChanges();
             MessageBox.Show("Job saved");
         }
@@ -86,6 +90,12 @@ namespace RFDesktopManager.Repos
         {
             var db = new RoyalFinishingDataContext();
             return db.Jobs.FirstOrDefault(x => x.Name == jobName);
+        }
+
+        public static Job GetJob(int jobiD)
+        {
+            var db = new RoyalFinishingDataContext();
+            return db.Jobs.FirstOrDefault(x => x.ID == jobiD);
         }
 
         public static List<Job> SearchForJobs(string text, int statusID)

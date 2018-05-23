@@ -56,7 +56,7 @@ namespace RFDesktopManager.Pages
 
         public static void Refresh()
         {
-            _viewModel.Refresh();
+            _viewModel.Refresh(_viewModel.JobModel.ID);
             _viewModel.SelectedStatus = RFRepo.GetStatusType(_viewModel.JobModel.StatusID);
         }
 
@@ -75,6 +75,33 @@ namespace RFDesktopManager.Pages
         {
             MainWindow.PageControl.SelectedIndex = JobsPage.ID;
             JobsPage._viewModel.Refresh();
+        }
+
+        private void txtSqFt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!(String.IsNullOrEmpty(txtSqFt.Text)))
+            {
+                _viewModel.JobModel.BillByHour = false;
+                _viewModel.JobModel.BillBySqFt = true;
+            }
+            else
+            {
+                _viewModel.JobModel.BillBySqFt = false;
+                _viewModel.JobModel.BillByHour = true;
+            }
+
+        }
+
+        private void chkHour_Click(object sender, RoutedEventArgs e)
+        {
+            chkSqFt.IsChecked = false;
+            _viewModel.Refresh(_viewModel.JobModel.ID);
+        }
+
+        private void chkSqFt_Click(object sender, RoutedEventArgs e)
+        {
+            chkHour.IsChecked = false;
+            _viewModel.Refresh(_viewModel.JobModel.ID);
         }
     }
 }

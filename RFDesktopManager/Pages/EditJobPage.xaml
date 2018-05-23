@@ -85,7 +85,7 @@
         <Button Name="btnMaterial" Content="Add Material" HorizontalAlignment="Left" Margin="643,247,0,0" VerticalAlignment="Top" Width="101" Height="27" Click="btnMaterial_Click"/>
         <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="-48,-30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
         <Label Content="Total sq. ft:" HorizontalAlignment="Left" Margin="537,72,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="624,70,0,0" TextWrapping="Wrap" Text="{Binding SqFt}" DataContext="{Binding JobModel}" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="612,70,0,0" TextWrapping="Wrap" Text="{Binding SqFt}" DataContext="{Binding JobModel}" VerticalAlignment="Top" Width="120" Name="txtSqFt" TextChanged="txtSqFt_TextChanged"/>
         <Label Content="Rate/ sq.ft : $" HorizontalAlignment="Left" Margin="583,102,0,0" VerticalAlignment="Top"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="661,103,0,0" TextWrapping="Wrap" Text="{Binding SqFtRate}" DataContext="{Binding JobModel}" VerticalAlignment="Top" Width="83"/>
         <Label Content="{Binding HourlyCost}" HorizontalAlignment="Left" Margin="90,716,0,0" VerticalAlignment="Top"/>
@@ -93,6 +93,8 @@
         <Label Content="Sq. ft total: $" HorizontalAlignment="Left" Margin="156,716,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding SqFtCost}" HorizontalAlignment="Left" Margin="238,716,0,0" VerticalAlignment="Top"/>
         <Label Content="Due:" HorizontalAlignment="Left" Margin="1260,163,0,0" VerticalAlignment="Top"/>
+        <CheckBox IsChecked="{Binding BillByHour}" DataContext="{Binding JobModel}" Name="chkHour" Content="Bill by hour" HorizontalAlignment="Left" Margin="0,699,0,0" VerticalAlignment="Top" Width="100" Click="chkHour_Click"/>
+        <CheckBox  IsChecked="{Binding BillBySqFt}" DataContext="{Binding JobModel}" Name="chkSqFt" Content="Bill by sq. ft." HorizontalAlignment="Left" Margin="156,699,0,0" VerticalAlignment="Top" Click="chkSqFt_Click"/>
 
     </Grid>
 </UserControl>
