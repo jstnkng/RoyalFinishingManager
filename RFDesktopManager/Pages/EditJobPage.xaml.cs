@@ -95,13 +95,17 @@ namespace RFDesktopManager.Pages
         private void chkHour_Click(object sender, RoutedEventArgs e)
         {
             chkSqFt.IsChecked = false;
-            _viewModel.Refresh(_viewModel.JobModel.ID);
+            _viewModel.JobModel.BillByHour = true;
+            _viewModel.JobModel.BillBySqFt = false;
+            _viewModel.RefreshInvoice();
         }
 
         private void chkSqFt_Click(object sender, RoutedEventArgs e)
         {
             chkHour.IsChecked = false;
-            _viewModel.Refresh(_viewModel.JobModel.ID);
+            _viewModel.JobModel.BillByHour = false;
+            _viewModel.JobModel.BillBySqFt = true;
+            _viewModel.RefreshInvoice();
         }
     }
 }

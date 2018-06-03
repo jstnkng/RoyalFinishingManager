@@ -1,4 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RoyalFinishing">
   <DataContextMoniker Name="/RoyalFinishingDataContext" />
+  <nestedChildShapes>
+    <classShape Id="db15dfce-f7c9-466c-bd8c-5a3d49315bd9" absoluteBounds="1.5, 1.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RoyalFinishingDataContext/Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3ece9f4e-d926-46e9-b0d1-caf02784f0d3" absoluteBounds="1.5150000000000001, 1.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80e0282e-704c-497a-bfb2-8dfcac707ab8" absoluteBounds="4.5, 1.125, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/RoyalFinishingDataContext/Job" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7d8f4054-8ddd-4eeb-b559-122b79f28eeb" absoluteBounds="4.515, 1.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2af260fa-a47d-479d-b80b-5dd87efbcbd2" absoluteBounds="1.875, 4, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/RoyalFinishingDataContext/JobStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2eba6bc8-c574-4327-9e87-b450a26cd6fa" absoluteBounds="1.8900000000000001, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3da5b01f-774c-4430-83fb-b5e415871888" absoluteBounds="7.75, 1.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RoyalFinishingDataContext/Labor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="64af0cea-78a4-42bf-b7c1-dcd412d6b229" absoluteBounds="7.765, 2.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4c623842-5ceb-47b5-96b9-986e8af1ec36" absoluteBounds="7.625, 4.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/RoyalFinishingDataContext/MaterialHistory" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2cb0e5bf-e377-4b59-99fb-be9d82b367ad" absoluteBounds="7.64, 4.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c20a689a-d697-42eb-b81b-aef273de0c20" absoluteBounds="4.875, 5.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/RoyalFinishingDataContext/Material" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99cacd35-4414-42f6-babf-7393adbc0dd4" absoluteBounds="4.89, 6.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
 </ordesignerObjectsDiagram>

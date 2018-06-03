@@ -21,8 +21,8 @@ namespace RFDesktopManager.ViewModels
             get { return jobModel; }
             set
             {
-                    jobModel = value;
-                    RaisePropertyChanged("JobModel");
+                jobModel = value;
+                RaisePropertyChanged("JobModel");
             }
         }
 
@@ -140,7 +140,7 @@ namespace RFDesktopManager.ViewModels
             get { return _HourlyCost; }
             set
             {
-                _HourlyCost = Math.Round(value.Value,2);
+                _HourlyCost = Math.Round(value.Value, 2);
                 RaisePropertyChanged("HourlyCost");
             }
         }
@@ -153,7 +153,7 @@ namespace RFDesktopManager.ViewModels
             set
             {
                 if (value.HasValue)
-                _SqFtCost = Math.Round(value.Value, 2);
+                    _SqFtCost = Math.Round(value.Value, 2);
                 RaisePropertyChanged("SqftCost");
             }
         }
@@ -170,34 +170,34 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
-        public void Refresh(int jobID)
+        public void RefreshInvoice()
         {
-            JobModel = RFRepo.GetJob(jobID);
             InvoiceCosts = "";
             InvoiceItems = "";
+            TotalCost = 0;
             Hours = 0;
             LaborList = RFRepo.GetJobLabors(jobModel.ID);
             HourlyCost = 0;
+            decimal workCost = 0;
             foreach (var labor in LaborList)
             {
                 Hours += labor.Hours;
                 var employeeRate = RFRepo.GetEmployeeRate(labor.EmployeeName);
                 HourlyCost += labor.Hours * employeeRate;
             }
+            SqFtCost = (jobModel.SqFt ?? new decimal(0.0) * jobModel.SqFtRate ?? new decimal(0.0));
             RaisePropertyChanged("HourlyCost");
-            if (LaborList.Count > 0)
+            if (JobModel.BillByHour)
             {
-                if (JobModel.BillByHour)
-                {
-                    InvoiceItems += "Labor: " + Hours + " hours\n\n";
-                    InvoiceCosts += "$" + HourlyCost.ToString() + "\n\n";
-                }
-                else if (JobModel.BillBySqFt)
-                {
-                    InvoiceItems += JobModel.SqFt + " total square ft at $" + JobModel.SqFtRate + "/ sq ft\n\n";
-                    InvoiceCosts += "$" + SqFtCost.ToString()  + "\n\n";
-                }
-                
+                InvoiceItems += "Labor: " + Hours + " hours\n\n";
+                InvoiceCosts += "$" + HourlyCost.ToString() + "\n\n";
+                workCost = HourlyCost ?? new decimal(0.0);
+            }
+            else if (JobModel.BillBySqFt)
+            {
+                InvoiceItems += JobModel.SqFt + " total square ft at $" + JobModel.SqFtRate + "/ sq ft\n\n";
+                InvoiceCosts += "$" + SqFtCost.ToString() + "\n\n";
+                workCost = SqFtCost ?? new decimal(0.0);
             }
             SqFtCost = jobModel.SqFt * jobModel.SqFtRate;
             RaisePropertyChanged("SqFtCost");
@@ -215,12 +215,18 @@ namespace RFDesktopManager.ViewModels
                     InvoiceCosts += "\n";
                 }
             }
-            TotalCost = HourlyCost.Value + invoiceMaterialsCost;
+            TotalCost = workCost + invoiceMaterialsCost;
             var cityString = new StringBuilder(jobModel.City);
             cityString.Append(",");
             cityString.Append(jobModel.State);
             cityString.Append(" " + jobModel.ZipCode);
             CityLine = cityString.ToString();
+        }
+
+        public void Refresh(int jobID)
+        {
+            JobModel = RFRepo.GetJob(jobID);
+            RefreshInvoice();
             if (SelectedStatus != null)
             {
                 SelectedStatus = RFRepo.GetStatusType(jobModel.StatusID);

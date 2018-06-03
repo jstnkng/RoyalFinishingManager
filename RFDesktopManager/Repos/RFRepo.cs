@@ -23,19 +23,18 @@ namespace RFDesktopManager.Repos
 
         public static void SaveJob(Job currentJob)
         {
-            var db = new RoyalFinishingDataContext();
-            var job = db.Jobs.FirstOrDefault(x => x.ID == currentJob.ID);
-            job.Address = currentJob.Address;
-            job.Description = currentJob.Description;
-            job.Name = currentJob.Name;
-            job.StatusID = currentJob.StatusID;
-            job.SqFt = currentJob.SqFt;
-            job.SqFtRate = currentJob.SqFtRate;
-            job.BillByHour = currentJob.BillByHour;
-            job.BillBySqFt = currentJob.BillBySqFt;
-            job.StartDate = currentJob.StartDate;
-            job.EndDate = currentJob.EndDate;
-            db.SubmitChanges();
+            try
+            {
+                var db = new RoyalFinishingDataContext();
+                var job = db.Jobs.FirstOrDefault(x => x.ID == currentJob.ID);
+                job.BillByHour = currentJob.BillByHour;
+                job.BillBySqFt = currentJob.BillBySqFt;
+                db.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             MessageBox.Show("Job saved");
         }
 
