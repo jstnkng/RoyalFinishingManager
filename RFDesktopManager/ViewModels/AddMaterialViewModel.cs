@@ -81,6 +81,18 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        private decimal _TotalPrice;
+
+        public decimal TotalPrice
+        {
+            get { return _TotalPrice; }
+            set
+            {
+                _TotalPrice = value;
+                RaisePropertyChanged("TotalPrice");
+            }
+        }
+
         private Material _SelectedMaterial;
 
         public Material SelectedMaterial

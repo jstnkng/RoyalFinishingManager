@@ -39,5 +39,17 @@ namespace RFDesktopManager.Pages
             MainWindow.PageControl.SelectedIndex = EditJobPage.ID;
             EditJobPage.Refresh();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (String.IsNullOrEmpty(txtPrice.Text)) _viewModel.TotalPrice = 0; 
+            else _viewModel.TotalPrice = Convert.ToDecimal(txtPrice.Text) * _viewModel.Model.Quantity;
+        }
+
+        private void IntegerUpDown_ValueChanged(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+            if (String.IsNullOrEmpty(txtQuantity.Text)) _viewModel.TotalPrice = 0;
+            else _viewModel.TotalPrice = _viewModel.Model.CostPerItem * Convert.ToDecimal(txtQuantity.Text);
+        }
     }
 }

@@ -9,16 +9,16 @@
              Height="800" Width="1550">
     <Grid Margin="48,30,11,6">
         <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="-48,-30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
-        <Label Content="Item:" HorizontalAlignment="Left" Margin="562,8,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.897,1.25"/>
-        <ComboBox ItemsSource="{Binding MaterialList}" DisplayMemberPath="Item" Text="{Binding NewMaterial}" SelectedItem="{Binding SelectedMaterial}" HorizontalAlignment="Left" Margin="562,39,0,0" VerticalAlignment="Top" Width="205" IsEditable="True"/>
+        <Label Content="Item:" HorizontalAlignment="Left" Margin="508,35,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.897,1.25"/>
+        <ComboBox ItemsSource="{Binding MaterialList}" DisplayMemberPath="Item" Text="{Binding NewMaterial}" SelectedItem="{Binding SelectedMaterial}" HorizontalAlignment="Left" Margin="562,39,0,0" VerticalAlignment="Top" Width="348" IsEditable="True"/>
         <Label Content="Price/Item:" HorizontalAlignment="Left" Margin="185,107,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="267,107,0,0" TextWrapping="Wrap" DataContext="{Binding Model}" Text="{Binding CostPerItem}" VerticalAlignment="Top" Width="161"/>
-        <xctk:IntegerUpDown DataContext="{Binding Model}" Text="{Binding Quantity}" Margin="562,107,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70"></xctk:IntegerUpDown>
+        <TextBox Name="txtPrice" TextChanged="TextBox_TextChanged" HorizontalAlignment="Left" Height="23" Margin="267,107,0,0" TextWrapping="Wrap" DataContext="{Binding Model}" Text="{Binding CostPerItem}" VerticalAlignment="Top" Width="161"/>
+        <xctk:IntegerUpDown  DataContext="{Binding Model}" Text="{Binding Quantity}" Margin="562,107,0,0" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70" ValueChanged="IntegerUpDown_ValueChanged" Name="txtQuantity"></xctk:IntegerUpDown>
         <Label Content="Qty:" HorizontalAlignment="Left" Margin="499,107,0,0" VerticalAlignment="Top"/>
         <Label Content="Total Price:" HorizontalAlignment="Left" Margin="138,221,0,0" VerticalAlignment="Top"/>
         <Label Content="Employee:" HorizontalAlignment="Left" Margin="11,8,0,0" VerticalAlignment="Top"/>
         <ComboBox ItemsSource="{Binding EmployeeList}" DisplayMemberPath="FullName" SelectedItem="{Binding SelectedEmployee}" HorizontalAlignment="Left" Margin="11,39,0,0" VerticalAlignment="Top" Width="334"/>
-        <Label Content="4.99" HorizontalAlignment="Left" Margin="210,221,0,0" VerticalAlignment="Top"/>
+        <Label Content="{Binding TotalPrice}" HorizontalAlignment="Left" Margin="210,221,0,0" VerticalAlignment="Top"/>
         <Label Content="Description:" HorizontalAlignment="Left" Margin="26,262,0,0" VerticalAlignment="Top"/>
         <TextBox DataContext="{Binding Model}" HorizontalAlignment="Left" Height="97" Margin="26,303,0,0" TextWrapping="Wrap" Text="{Binding Description}" VerticalAlignment="Top" Width="800"/>
         <Button Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="635,633,0,0" VerticalAlignment="Top" Width="155" Click="btnSave_Click" Height="50">
@@ -26,6 +26,6 @@
         </Button>
         <Label Content="Job:" HorizontalAlignment="Left" Margin="383,221,0,0" VerticalAlignment="Top"/>
         <ComboBox ItemsSource="{Binding JobList}" DisplayMemberPath="Name" Text="{Binding JobName}" HorizontalAlignment="Left" Margin="419,221,0,0" VerticalAlignment="Top" Width="292"/>
-        <CheckBox Content="All jobs" HorizontalAlignment="Left" Margin="767,221,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Search all jobs" HorizontalAlignment="Left" Margin="767,221,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
