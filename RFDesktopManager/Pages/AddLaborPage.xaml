@@ -18,6 +18,7 @@
         <xctk:TimePicker Text="{Binding Time2}" HorizontalAlignment="Left" Margin="426,112,0,0" VerticalAlignment="Top" Width="188" Height="35"/>
         <xctk:TimePicker Text="{Binding Time3}"  HorizontalAlignment="Left" Margin="426,203,0,0" VerticalAlignment="Top" Width="188" Height="35"/>
         <xctk:TimePicker Text="{Binding Time4}" HorizontalAlignment="Left" Margin="426,268,0,0" VerticalAlignment="Top" Width="188" Height="35"/>
+        
         <Label Content="Total hours:" HorizontalAlignment="Left" Margin="449,358,0,0" VerticalAlignment="Top"/>
         <Label Content="{Binding Hours}" DataContext="{Binding LaborModel}" HorizontalAlignment="Left" Margin="555,358,0,0" VerticalAlignment="Top"/>
         <Button Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="302,434,0,0" VerticalAlignment="Top" Width="138" Click="btnAdd_Click" Height="42"/>

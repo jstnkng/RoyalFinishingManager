@@ -56,13 +56,14 @@ namespace RFDesktopManager.Pages
 
         public static void Refresh()
         {
-            _viewModel.Refresh(_viewModel.JobModel.ID);
+            _viewModel.LoadJob(_viewModel.JobModel.ID);
             _viewModel.SelectedStatus = RFRepo.GetStatusType(_viewModel.JobModel.StatusID);
         }
 
         private void btnLabor_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.PageControl.SelectedIndex = AddLaborPage.ID;
+            AddLaborPage._viewModel.SelectedJob = RFRepo.GetJob(_viewModel.JobModel.ID).Name;
         }
 
         private void btnMaterial_Click(object sender, RoutedEventArgs e)
@@ -85,13 +86,13 @@ namespace RFDesktopManager.Pages
         private void chkHour_Click(object sender, RoutedEventArgs e)
         {
             chkSqFt.IsChecked = false;
-            _viewModel.RefreshInvoice();
+            _viewModel.Refresh();
         }
 
         private void chkSqFt_Click(object sender, RoutedEventArgs e)
         {
             chkHour.IsChecked = false;
-            _viewModel.RefreshInvoice();
+            _viewModel.Refresh();
         }
     }
 }

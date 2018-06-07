@@ -39,7 +39,7 @@ namespace RFDesktopManager.ViewModels
                 if (value != null)
                 {
                     MainWindow.PageControl.SelectedIndex = 2;
-                    EditJobPage._viewModel.Refresh(value.ID);
+                    EditJobPage._viewModel.LoadJob(value.ID);
                     EditJobPage._viewModel.SelectedStatus = RFRepo.GetStatusType(EditJobPage._viewModel.JobModel.StatusID);
                 }
                 _selectedJob = value;

@@ -21,7 +21,7 @@ namespace RFDesktopManager.Pages
     /// </summary>
     public partial class AddLaborPage : UserControl
     {
-        private AddLaborViewModel _viewModel;
+        public static AddLaborViewModel _viewModel;
 
         public static int ID = 4;
 
@@ -40,6 +40,7 @@ namespace RFDesktopManager.Pages
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.PageControl.SelectedIndex = EditJobPage.ID;
+            EditJobPage._viewModel.Refresh();
         }
     }
 }

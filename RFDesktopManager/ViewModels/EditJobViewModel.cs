@@ -170,7 +170,7 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
-        public void RefreshInvoice()
+        public void Refresh()
         {
             InvoiceCosts = "";
             InvoiceItems = "";
@@ -224,11 +224,11 @@ namespace RFDesktopManager.ViewModels
             CityLine = cityString.ToString();
         }
 
-        public void Refresh(int jobID)
+        public void LoadJob(int jobID)
         {
             JobModel = RFRepo.GetJob(jobID);
             RaisePropertyChanged("JobModel");
-            RefreshInvoice();
+            Refresh();
             if (SelectedStatus != null)
             {
                 SelectedStatus = RFRepo.GetStatusType(jobModel.StatusID);

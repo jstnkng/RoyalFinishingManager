@@ -10,8 +10,8 @@
         <Button Name="btnBack" Content="Back" HorizontalAlignment="Left" Margin="-48,-30,0,0" VerticalAlignment="Top" Width="75" Click="btnBack_Click"/>
         <Label Content="Employee:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <ComboBox ItemsSource="{Binding EmployeeList}" SelectedValue="{Binding SelectedEmployee}" DisplayMemberPath="FullName" HorizontalAlignment="Left" Margin="79,14,0,0" VerticalAlignment="Top" Width="178"/>
-        <Label Content="Start date:" HorizontalAlignment="Left" Margin="296,5,0,0" VerticalAlignment="Top"/>
-        <Label Content="5/11/2018" HorizontalAlignment="Left" Margin="365,5,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
+        <Label Content="Start date:" HorizontalAlignment="Left" Margin="106,87,0,0" VerticalAlignment="Top"/>
+        <Label Content="5/11/2018" HorizontalAlignment="Left" Margin="175,87,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
         <ListView ItemsSource="{Binding LaborList}" HorizontalAlignment="Left" Height="648" Margin="565,20,0,0" VerticalAlignment="Top" Width="602">
             <ListView.View>
                 <GridView>
@@ -21,12 +21,23 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Label Content="Total hours: " HorizontalAlignment="Left" Margin="171,366,0,0" VerticalAlignment="Top"/>
-        <Button Content="Prev Week" HorizontalAlignment="Left" Margin="24,322,0,0" VerticalAlignment="Top" Width="96" Height="114"/>
-        <Button Content="Next Week" HorizontalAlignment="Left" Margin="352,322,0,0" VerticalAlignment="Top" Width="104" Height="114"/>
-        <Label Content="End date:" HorizontalAlignment="Left" Margin="306,36,0,0" VerticalAlignment="Top"/>
-        <Label Content="5/18/2018" HorizontalAlignment="Left" Margin="365,36,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
-        <Label Content="40" HorizontalAlignment="Left" Margin="260,366,0,0" VerticalAlignment="Top"/>
+        <Label Content="Total hours: " HorizontalAlignment="Left" Margin="1055,692,0,0" VerticalAlignment="Top"/>
+        <Button Content="Prev Week" HorizontalAlignment="Left" Margin="91,596,0,0" VerticalAlignment="Top" Width="104" Height="42"/>
+        <Button Content="Next Week" HorizontalAlignment="Left" Margin="368,596,0,0" VerticalAlignment="Top" Width="104" Height="42"/>
+        <Label Content="End date:" HorizontalAlignment="Left" Margin="267,87,0,0" VerticalAlignment="Top"/>
+        <Label Content="5/18/2018" HorizontalAlignment="Left" Margin="326,87,0,0" VerticalAlignment="Top" Height="26" Width="69"/>
+        <Label Content="40" HorizontalAlignment="Left" Margin="1144,692,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="134,200,0,0" VerticalAlignment="Top" Width="336" Height="34"/>
+        <Label Content="Job:" HorizontalAlignment="Left" Margin="79,204,0,0" VerticalAlignment="Top" Height="30" Width="50"/>
+        <Label Content="Start time:" HorizontalAlignment="Left" Margin="116,295,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="206,295,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="End time:" HorizontalAlignment="Left" Margin="121,368,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="206,372,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Break:" HorizontalAlignment="Left" Margin="153,445,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="206,448,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label Content="minutes" HorizontalAlignment="Left" Margin="348,448,0,0" VerticalAlignment="Top"/>
+        <Button Content="AM" HorizontalAlignment="Left" Margin="348,295,0,0" VerticalAlignment="Top" Width="47"/>
+        <Button Content="PM" HorizontalAlignment="Left" Margin="348,372,0,0" VerticalAlignment="Top" Width="52"/>
 
     </Grid>
 </UserControl>
