@@ -185,7 +185,8 @@ namespace RFDesktopManager.ViewModels
                 var employeeRate = RFRepo.GetEmployeeRate(labor.EmployeeName);
                 HourlyCost += labor.Hours * employeeRate;
             }
-            SqFtCost = (jobModel.SqFt ?? new decimal(0.0) * jobModel.SqFtRate ?? new decimal(0.0));
+            SqFtCost = jobModel.SqFt ?? new decimal(0.0);
+            SqFtCost = SqFtCost * jobModel.SqFtRate ?? new decimal(0.0);
             RaisePropertyChanged("HourlyCost");
             if (JobModel.BillByHour)
             {
@@ -226,6 +227,7 @@ namespace RFDesktopManager.ViewModels
         public void Refresh(int jobID)
         {
             JobModel = RFRepo.GetJob(jobID);
+            RaisePropertyChanged("JobModel");
             RefreshInvoice();
             if (SelectedStatus != null)
             {

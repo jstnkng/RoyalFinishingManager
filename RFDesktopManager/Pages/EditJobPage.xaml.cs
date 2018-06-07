@@ -79,32 +79,18 @@ namespace RFDesktopManager.Pages
 
         private void txtSqFt_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!(String.IsNullOrEmpty(txtSqFt.Text)))
-            {
-                _viewModel.JobModel.BillByHour = false;
-                _viewModel.JobModel.BillBySqFt = true;
-            }
-            else
-            {
-                _viewModel.JobModel.BillBySqFt = false;
-                _viewModel.JobModel.BillByHour = true;
-            }
 
         }
 
         private void chkHour_Click(object sender, RoutedEventArgs e)
         {
             chkSqFt.IsChecked = false;
-            _viewModel.JobModel.BillByHour = true;
-            _viewModel.JobModel.BillBySqFt = false;
             _viewModel.RefreshInvoice();
         }
 
         private void chkSqFt_Click(object sender, RoutedEventArgs e)
         {
             chkHour.IsChecked = false;
-            _viewModel.JobModel.BillByHour = false;
-            _viewModel.JobModel.BillBySqFt = true;
             _viewModel.RefreshInvoice();
         }
     }

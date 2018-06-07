@@ -32,7 +32,8 @@ namespace RFDesktopManager.ViewModels
             JobModel.Address = "";
             JobModel.City = "";
             JobModel.Description = "";
-            JobModel.StatusID = 1;         
+            JobModel.StatusID = 1;
+            JobModel.BillByHour = true;
         }
 
         public void SaveJob()
