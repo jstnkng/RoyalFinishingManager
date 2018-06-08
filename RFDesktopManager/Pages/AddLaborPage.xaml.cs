@@ -42,5 +42,10 @@ namespace RFDesktopManager.Pages
             MainWindow.PageControl.SelectedIndex = EditJobPage.ID;
             EditJobPage._viewModel.Refresh();
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            _viewModel.RefreshJobs();
+        }
     }
 }

@@ -27,11 +27,20 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        public bool SearchAllJobs { get; set; }
+
         public AddLaborViewModel()
         {
             EmployeeList = RFRepo.GetEmployees();
-            JobsList = RFRepo.GetJobs(0);
+            if (SearchAllJobs) JobsList = RFRepo.GetJobs(0);
+            else JobsList = RFRepo.GetJobs(RFRepo.JobStatusInProgress);
             LaborModel = new Labor();
+        }
+
+        public void RefreshJobs()
+        {
+            if (SearchAllJobs) JobsList = RFRepo.GetJobs(0);
+            else JobsList = RFRepo.GetJobs(RFRepo.JobStatusInProgress);
         }
 
         public TimeSpan span1 = new TimeSpan();

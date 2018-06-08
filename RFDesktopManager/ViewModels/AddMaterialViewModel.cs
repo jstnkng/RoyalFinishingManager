@@ -142,12 +142,21 @@ namespace RFDesktopManager.ViewModels
             }
         }
 
+        public bool SearchAllJobs { get; set; }
+
         public AddMaterialViewModel()
         {
             EmployeeList = RFRepo.GetEmployees();
             MaterialList = RFRepo.GetMaterials();
-            JobList = RFRepo.GetJobs(0);
+            if (SearchAllJobs) JobList = RFRepo.GetJobs(0);
+            else JobList = RFRepo.GetJobs(RFRepo.JobStatusInProgress);
             Model = new MaterialHistory();
+        }
+
+        public void RefreshJobs()
+        {
+            if (SearchAllJobs) JobList = RFRepo.GetJobs(0);
+            else JobList = RFRepo.GetJobs(RFRepo.JobStatusInProgress);
         }
 
         public void Save()

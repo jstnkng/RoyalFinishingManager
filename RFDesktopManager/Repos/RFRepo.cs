@@ -12,6 +12,10 @@ namespace RFDesktopManager.Repos
 {
     public class RFRepo
     {
+        public static readonly int JobStatusPending = 1;
+        public static readonly int JobStatusInProgress = 2;
+        public static readonly int JobStatusNeedsInvoice = 3;
+        public static readonly int JobStatusCompleted = 4;
 
         public static void AddJob(Job newJob)
         { 

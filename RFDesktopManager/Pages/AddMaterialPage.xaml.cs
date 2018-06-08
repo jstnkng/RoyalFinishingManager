@@ -51,5 +51,10 @@ namespace RFDesktopManager.Pages
             if (String.IsNullOrEmpty(txtQuantity.Text)) _viewModel.TotalPrice = 0;
             else _viewModel.TotalPrice = _viewModel.Model.CostPerItem * Convert.ToDecimal(txtQuantity.Text);
         }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            _viewModel.RefreshJobs();
+        }
     }
 }
